@@ -4,7 +4,7 @@ import "./NavBar.css"
 
 const NavBar = () => {
     return (
-        <div>
+        <div className="">
             <div className="navbar bg-base-200 p-10">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -19,6 +19,7 @@ const NavBar = () => {
                             </li>
                             <li><Link>Dashboard</Link></li>
                             <li><Link>Profile</Link></li>
+                            <li><Link to="/login">Login</Link></li>
                         </ul>
                     </div>
                     <div className="logo">
@@ -27,13 +28,12 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link>Home</Link></li>
-                        <li><Link>Instructors</Link></li>
-                        <li>
-                            <Link>Classes</Link>
-                        </li>
-                        <li><Link>Dashboard</Link></li>
-                        <li><Link>Profile</Link></li>
+                        <li className=""><Link>Home</Link></li>
+                        <li className=""><Link>Instructors</Link></li>
+                        <li className=""><Link>Classes</Link></li>
+                        <li className=""><Link>Dashboard</Link></li>
+                        <li className=""><Link>Profile</Link></li>
+                        <li className=""><Link to="/login">Login</Link></li>
                     </ul>
                 </div>
             </div>
