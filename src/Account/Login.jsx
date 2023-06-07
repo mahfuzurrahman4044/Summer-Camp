@@ -1,20 +1,54 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const [error, setError] = useState();
+    const { signIn, googleSignIn } = useContext(AuthContext);
     const handleSubmit = (event) => {
         event.preventDefault();
-        const email = event.target.email.value;
-        const password = event.target.password.value;
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
         console.log(email, password);
 
         signIn(email, password)
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res.user)
+                form.reset();
+                setError("");
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Account has been created',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(error => setError(error.message))
     }
 
+    const handleGoogleLogin = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setError("");
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Account has been created',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -38,9 +72,12 @@ const Login = () => {
                                     <Link to='/signup'>New to Summer Camp? Please <div className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary ml-1 mt-4">Sign Up</div> </Link>
                                 </label>
                             </div>
+                            <p className="text-red-600">{error}</p>
                             <div className="form-control mt-6">
                                 <button className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary">Login</button>
                             </div>
+                            <div className="divider">OR</div>
+                            <div className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary" onClick={handleGoogleLogin}><FaGoogle /></div>
                         </form>
                     </div>
                 </div>

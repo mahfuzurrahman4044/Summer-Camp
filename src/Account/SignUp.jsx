@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
@@ -15,8 +16,19 @@ const SignUp = () => {
         }
         else {
             createUser(data.email, data.password)
-                .then(res => console.log(res.user));
-            reset()
+                .then(res => {
+                    console.log(res.user);
+                    reset()
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Account has been created',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                });
+
+            setError("");
         }
     }
 

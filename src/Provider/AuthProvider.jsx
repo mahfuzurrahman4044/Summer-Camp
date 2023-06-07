@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from "../firebase";
 // import axios from "axios";
 
@@ -22,12 +22,12 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    // const googleProvider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
-    // const googleSignIn = () => {
-    //     setLoader(true);
-    //     return signInWithPopup(auth, googleProvider);
-    // }
+    const googleSignIn = () => {
+        setLoader(true);
+        return signInWithPopup(auth, googleProvider);
+    }
 
     // const logOut = () => {
     //     setLoader(true);
@@ -70,7 +70,8 @@ const AuthProvider = ({ children }) => {
         user,
         loader,
         createUser,
-        signIn
+        signIn,
+        googleSignIn
     }
 
     return (
