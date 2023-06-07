@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase";
 // import axios from "axios";
 
@@ -29,10 +29,10 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider);
     }
 
-    // const logOut = () => {
-    //     setLoader(true);
-    //     return signOut(auth);
-    // }
+    const logOut = () => {
+        setLoader(true);
+        return signOut(auth);
+    }
 
     // const updateUserProfile = (name, photo) => {
     //     return updateProfile(auth.currentUser, {
@@ -40,38 +40,39 @@ const AuthProvider = ({ children }) => {
     //     });
     // }
 
-    // useEffect(() => {
-    //     const unsubscribe = onAuthStateChanged(auth, currentUser => {
-    //         setUser(currentUser);
-    //         console.log('current user', currentUser);
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            console.log('current user', currentUser);
 
-    //         // get and set token
-    //         if (currentUser) {
-    //             axios.post('/jwt', { email: currentUser.email })
-    //                 .then(data => {
-    //                     // console.log(data.data.token)
-    //                     localStorage.setItem('access-token', data.data.token)
-    //                     setLoader(false);
-    //                 })
-    //         }
-    //         else {
-    //             localStorage.removeItem('access-token')
-    //             setLoader(false);
-    //         }
+            // get and set token
+            // if (currentUser) {
+            //     axios.post('/jwt', { email: currentUser.email })
+            //         .then(data => {
+            //             // console.log(data.data.token)
+            //             localStorage.setItem('access-token', data.data.token)
+            //             setLoader(false);
+            //         })
+            // }
+            // else {
+            //     localStorage.removeItem('access-token')
+            //     setLoader(false);
+            // }
 
 
-    //     });
-    //     return () => {
-    //         return unsubscribe();
-    //     }
-    // }, [])
+        });
+        return () => {
+            return unsubscribe();
+        }
+    }, [])
 
     const authInfo = {
         user,
         loader,
         createUser,
         signIn,
-        googleSignIn
+        googleSignIn,
+        logOut
     }
 
     return (

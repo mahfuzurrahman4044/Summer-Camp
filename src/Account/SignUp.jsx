@@ -2,15 +2,18 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [error, setError] = useState("");
+    const navigate=useNavigate();
 
     const onSubmit = (data) => {
         // console.log(data.name);
+        
         if (data.password !== data.confirmPassword) {
             setError("Password doesn't matched")
         }
@@ -26,6 +29,7 @@ const SignUp = () => {
                         showConfirmButton: false,
                         timer: 1500
                     })
+                    navigate("/")
                 });
 
             setError("");
