@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext);
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [error, setError] = useState("");
 
     const onSubmit = (data) => {
-        console.log(data.name);
+        // console.log(data.name);
         if (data.password !== data.confirmPassword) {
             setError("Password doesn't matched")
+        }
+        else {
+            createUser(data.email, data.password)
+                .then(res => console.log(res.user));
+            reset()
         }
     }
 
