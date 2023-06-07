@@ -26,7 +26,8 @@ const NavBar = () => {
                             </li>
                             {
                                 user ? <><li><Link>Dashboard</Link></li>
-                                    <li><Link>Profile</Link></li></>
+                                    <li><Link><div className="userImg"><img src={user.photoURL} alt="" /></div></Link></li>
+                                    <li><button onClick={handleLogOut}>Log Out</button></li></>
                                     : <li><Link to="/login">Login</Link></li>
                             }
                         </ul>
@@ -42,7 +43,7 @@ const NavBar = () => {
                         <li className=""><Link>Classes</Link></li>
                         {
                             user ? <><li><Link>Dashboard</Link></li>
-                                <li><Link>Profile</Link></li>
+                                <li><Link><div className="userImg"><img src={user.photoURL} alt="" /></div></Link></li>
                                 <li><button onClick={handleLogOut}>Log Out</button></li></>
                                 : <li><Link to="/login">Login</Link></li>
                         }

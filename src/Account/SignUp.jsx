@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateInfo } = useContext(AuthContext);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [error, setError] = useState("");
@@ -28,6 +28,13 @@ const SignUp = () => {
                         title: 'Account has been created',
                         showConfirmButton: false,
                         timer: 1500
+                    })
+                    updateInfo(data.name, data.photoURL)
+                    .then(() => {
+                        console.log("User Updated")
+                    })
+                    .catch(error => {
+                        console.log(error.message)
                     })
                     navigate("/")
                 });

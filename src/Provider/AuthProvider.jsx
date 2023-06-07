@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, updateProfile, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase";
 // import axios from "axios";
 
@@ -17,10 +17,18 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    const updateInfo = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        });
+    }
+
     const signIn = (email, password) => {
         setLoader(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
+
+
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -33,12 +41,6 @@ const AuthProvider = ({ children }) => {
         setLoader(true);
         return signOut(auth);
     }
-
-    // const updateUserProfile = (name, photo) => {
-    //     return updateProfile(auth.currentUser, {
-    //         displayName: name, photoURL: photo
-    //     });
-    // }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -70,6 +72,7 @@ const AuthProvider = ({ children }) => {
         user,
         loader,
         createUser,
+        updateInfo,
         signIn,
         googleSignIn,
         logOut
