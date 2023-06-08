@@ -1,19 +1,31 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import logo from "../../assets/Logo/vintage-summer-camp-logo-template-vector.jpg"
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-// import "./styles.css";
-
-// import required modules
 import { Pagination } from "swiper";
-
+import { useEffect, useState } from "react";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const PopularInstructorSection = () => {
+    const [popularInstructors, setPopularInstructors] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/instructors")
+            .then((res) => res.json())
+            .then((data) => {
+                setPopularInstructors(data);
+            })
+            .catch((error) => {
+                console.log("Error fetching instructors:", error);
+            });
+    }, []);
+
+    const results = popularInstructors?.filter(
+        (popularInstructor) => popularInstructor.type === "popular"
+    );
+
     return (
         <div>
-            <>
+            <SectionTitle title={"Popular Instructors"}></SectionTitle>
+            <div className="class">
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={30}
@@ -24,17 +36,13 @@ const PopularInstructorSection = () => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
-                    <SwiperSlide><img src={logo} alt="" /></SwiperSlide>
+                    {results?.map((result) => (
+                        <SwiperSlide key={result.id}>
+                            <img src={result.img} alt="" />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
-            </>
+            </div>
         </div>
     );
 };
