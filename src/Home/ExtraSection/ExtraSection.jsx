@@ -16,8 +16,8 @@ const ExtraSection = () => {
     return (
         <div className="bg-base-200 py-5" data-aos="fade-up">
             <SectionTitle title={"Review"}></SectionTitle>
-            <div className="py-5 lg:flex justify-around items-center">
-                <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="py-5 lg:flex justify-around items-center extra-section">
+                <div className="card w-96 bg-base-100 shadow-xl card">
                     <figure className="px-10 pt-10">
                         <img src={img1} alt="Shoes" className="rounded-xl" />
                     </figure>
@@ -28,7 +28,7 @@ const ExtraSection = () => {
                     </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-xl card">
                     <figure className="px-10 pt-10">
                         <img src={img2} alt="Shoes" className="rounded-xl" />
                     </figure>
@@ -39,7 +39,7 @@ const ExtraSection = () => {
                     </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-xl card">
                     <figure className="px-10 pt-10">
                         <img src={img3} alt="Shoes" className="rounded-xl" />
                     </figure>

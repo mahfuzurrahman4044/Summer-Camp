@@ -2,3 +2,10 @@
     height: 300px;
     width: 250px;
 }
+
+@media only screen and (max-width: 480px) {
+    .class img {
+        height: 100px;
+        width: 100px;
+    }
+}

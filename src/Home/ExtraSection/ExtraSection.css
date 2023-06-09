@@ -2,3 +2,15 @@ figure img{
     height: 250px;
     width: 250px;
 }
+
+@media only screen and (max-width: 480px){
+    .extra-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card{
+        margin-top: 10px;
+    }
+}
