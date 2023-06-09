@@ -104,7 +104,7 @@ const SignUp = () => {
                                 <p className="text-red-600">{error}</p>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Sign Up</button>
+                                <button className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary">Sign Up</button>
                             </div>
                         </form>
                     </div>

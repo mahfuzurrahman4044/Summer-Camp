@@ -39,7 +39,7 @@ const PopularClassSection = () => {
                     {results?.map(result => (
                         <SwiperSlide key={result.id}>
                             <img className="rounded-md" src={result.img} alt="" />
-                            <h3 className="text-2xl font-semibold title">{result.className}</h3>
+                            <h3 className="text-2xl font-semibold title">{result.classTitle}</h3>
                         </SwiperSlide>
                     ))}
                 </Swiper>

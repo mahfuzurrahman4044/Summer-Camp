@@ -1,9 +1,21 @@
-
+import { useEffect, useState } from "react";
+import ClassCard from "./ClassCard";
 
 const Classes = () => {
+    const [classes, setClasses] = useState([]);
+    console.log(classes);
+    useEffect(() => {
+        fetch("http://localhost:5000/classes")
+            .then(res => res.json())
+            .then(data => {
+                setClasses(data)
+            })
+    }, [])
     return (
-        <div>
-            <h2>Classes</h2>
+        <div className="grid grid-cols-3 ps-8">
+            {
+                classes.map(singleClass => <ClassCard key={singleClass._id} singleClass={singleClass}></ClassCard>)
+            }
         </div>
     );
 };
