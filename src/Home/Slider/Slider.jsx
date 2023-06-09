@@ -9,21 +9,21 @@ import img5 from "../../assets/Slider/IMG_7453.jpg"
 
 const Slider = () => {
     return (
-        <Carousel>
+        <Carousel className="mx-5">
             <div className="slider-img">
-                <img src={img1} />
+                <img className="rounded-md" src={img1} />
             </div>
             <div className="slider-img">
-                <img src={img2} />
+                <img className="rounded-md" src={img2} />
             </div>
             <div className="slider-img">
-                <img src={img3} />
+                <img className="rounded-md" src={img3} />
             </div>
             <div className="slider-img">
-                <img src={img4} />
+                <img className="rounded-md" src={img4} />
             </div>
             <div className="slider-img">
-                <img src={img5} />
+                <img className="rounded-md" src={img5} />
             </div>
         </Carousel>
     );
