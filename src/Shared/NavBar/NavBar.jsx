@@ -20,10 +20,11 @@ const NavBar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link>Home</Link></li>
-                            <li><Link>Instructors</Link></li>
                             <li>
-                                <Link>Classes</Link>
+                                <Link to="/classes">Classes</Link>
                             </li>
+                            <li><Link to="/instructors">Instructors</Link></li>
+
                             {
                                 user ? <><li><Link>Dashboard</Link></li>
                                     <li><Link><div className="userImg"><img src={user.photoURL} alt="" /></div></Link></li>
@@ -39,8 +40,8 @@ const NavBar = () => {
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li className=""><Link>Home</Link></li>
-                        <li className=""><Link>Instructors</Link></li>
-                        <li className=""><Link>Classes</Link></li>
+                        <li className=""><Link to="/classes">Classes</Link></li>
+                        <li className=""><Link to="/instructors">Instructors</Link></li>
                         {
                             user ? <><li><Link>Dashboard</Link></li>
                                 <li><Link><div className="userImg"><img src={user.photoURL} alt="" /></div></Link></li>
