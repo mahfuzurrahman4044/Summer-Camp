@@ -37,7 +37,7 @@ const PopularInstructorSection = () => {
                     className="mySwiper"
                 >
                     {results?.map((result) => (
-                        <SwiperSlide key={result.id}>
+                        <SwiperSlide key={result._id}>
                             <img className="rounded-md" src={result.img} alt="" />
                             <h3 className="uppercase text-2xl font-semibold">{result.name}</h3>
                         </SwiperSlide>

@@ -23,6 +23,8 @@ import Instructors from './Pages/Instructors/Instructors';
 import Error from './Pages/404/Error';
 import Dashboard from './Dashboard/Dashboard';
 import MyClasses from './Dashboard/MyClasses/MyClasses';
+import EnrolledClasses from './Dashboard/EnrolledClasses/EnrolledClasses';
+import PaymentHistory from './Dashboard/PaymentHistory/PaymentHistory';
 
 const router = createBrowserRouter([
   {
@@ -57,7 +59,16 @@ const router = createBrowserRouter([
     children: [{
       path: "/dashboard/myClasses",
       element: <MyClasses></MyClasses>
-    }]
+    },
+    {
+      path: "/dashboard/enrolledClasses",
+      element: <EnrolledClasses></EnrolledClasses>
+    },
+    {
+      path: "/dashboard/paymentHistory",
+      element: <PaymentHistory></PaymentHistory>
+    }
+    ]
   },
   {
     path: "*",

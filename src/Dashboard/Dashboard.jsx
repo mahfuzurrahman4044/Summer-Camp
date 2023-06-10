@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { FaBookmark, FaCartPlus, FaHome, FaUser, FaWallet } from "react-icons/fa";
+import { FaBookmark, FaCartPlus, FaHome, FaPaypal, FaUser, FaWallet } from "react-icons/fa";
 import UseQuery from "../UseQuery/UseQuery";
 
 const Dashboard = () => {
@@ -18,7 +18,8 @@ const Dashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content bg-[#D1A054]">
                         {/* Sidebar content here */}
                         <li><Link to="/dashboard/myClasses"><FaBookmark></FaBookmark>Selected Class</Link></li>
-                        <li><Link><FaWallet></FaWallet>My Enrolled Classes</Link></li>
+                        <li><Link to="/dashboard/enrolledClasses"><FaWallet></FaWallet>My Enrolled Classes</Link></li>
+                        <li><Link to="/dashboard/paymentHistory"><FaPaypal/>Payment History</Link></li>
                         <div className="divider"></div>
                         <li><Link to="/"><FaHome></FaHome>Home</Link></li>
                         <li><Link to="/classes"><FaCartPlus></FaCartPlus> Class</Link></li>

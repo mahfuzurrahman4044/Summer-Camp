@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const ClassCard = ({ singleClass }) => {
     const { img, classTitle, instructorName, availableClasses, price } = singleClass;
     const { user } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -31,7 +31,7 @@ const ClassCard = ({ singleClass }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     if (data.insertedId) {
                         Swal.fire({
                             position: 'center',

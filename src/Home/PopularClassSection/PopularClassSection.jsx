@@ -36,12 +36,12 @@ const PopularClassSection = () => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                    {results?.map(result => (
-                        <SwiperSlide key={result.id}>
+                    {results?.map(result =>
+                        <SwiperSlide key={result._id}>
                             <img className="rounded-md" src={result.img} alt="" />
                             <h3 className="text-2xl font-semibold title">{result.classTitle}</h3>
                         </SwiperSlide>
-                    ))}
+                    )}
                 </Swiper>
             </div>
         </dir>
