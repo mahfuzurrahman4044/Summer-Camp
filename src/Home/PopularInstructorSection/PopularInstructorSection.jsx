@@ -4,7 +4,13 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useEffect, useState } from "react";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+
+import "aos/dist/aos.css"
+import Aos from "aos";
 const PopularInstructorSection = () => {
+    useEffect(() => {
+        Aos.init()
+    }, [])
     const [popularInstructors, setPopularInstructors] = useState([]);
 
     useEffect(() => {
@@ -23,9 +29,9 @@ const PopularInstructorSection = () => {
     );
 
     return (
-        <div>
+        <div data-aos="fade-up">
             <SectionTitle title={"Popular Instructors"}></SectionTitle>
-            <div className="class">
+            <div className="class" data-aos="fade-up">
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={30}

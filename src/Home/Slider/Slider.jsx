@@ -7,9 +7,16 @@ import img3 from "../../assets/Slider/shutterstock-522863668___08084416583.webp"
 import img4 from "../../assets/Slider/5cd0a845-aede-4dcf-9a5f-1433e97f89a9-large16x9_cAMP.webp"
 import img5 from "../../assets/Slider/IMG_7453.jpg"
 
+import "aos/dist/aos.css"
+import { useEffect } from "react";
+import Aos from "aos";
+
 const Slider = () => {
+    useEffect(() => {
+        Aos.init()
+    }, [])
     return (
-        <Carousel className="mx-5">
+        <Carousel className="mx-5" data-aos="fade-up">
             <div className="slider-img">
                 <img className="rounded-md" src={img1} />
             </div>

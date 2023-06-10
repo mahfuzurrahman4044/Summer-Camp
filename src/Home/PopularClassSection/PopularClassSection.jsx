@@ -6,7 +6,14 @@ import { useEffect, useState } from "react";
 import "./PopularClassSection.css"
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
+import "aos/dist/aos.css"
+import Aos from "aos";
+
 const PopularClassSection = () => {
+    useEffect(() => {
+        Aos.init()
+    }, [])
+
     const [popularClasses, setPopularClasses] = useState();
     //   console.log(popularClasses);
 
@@ -23,9 +30,9 @@ const PopularClassSection = () => {
     );
 
     return (
-        <dir>
+        <div data-aos="fade-up">
             <SectionTitle title={"Popular Classes"}></SectionTitle>
-            <div className="class my-6">
+            <div className="class my-6" data-aos="fade-up">
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={30}
@@ -44,7 +51,7 @@ const PopularClassSection = () => {
                     )}
                 </Swiper>
             </div>
-        </dir>
+        </div>
     );
 };
 
