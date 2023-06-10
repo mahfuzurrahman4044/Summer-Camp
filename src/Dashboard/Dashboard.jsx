@@ -1,9 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
-import { FaBookmark, FaCartPlus, FaHome, FaPaypal, FaUser, FaWallet } from "react-icons/fa";
+import { FaBook, FaBookmark, FaCartPlus, FaHome, FaPaypal, FaUser, FaWallet } from "react-icons/fa";
 import UseQuery from "../UseQuery/UseQuery";
 
 const Dashboard = () => {
     const [classes] = UseQuery();
+    const isAdmin = true;
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -15,16 +16,33 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side bg-[#D1A054]">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content bg-[#D1A054]">
-                        {/* Sidebar content here */}
-                        <li><Link to="/dashboard/myClasses"><FaBookmark></FaBookmark>Selected Class</Link></li>
-                        <li><Link to="/dashboard/enrolledClasses"><FaWallet></FaWallet>My Enrolled Classes</Link></li>
-                        <li><Link to="/dashboard/paymentHistory"><FaPaypal/>Payment History</Link></li>
-                        <div className="divider"></div>
-                        <li><Link to="/"><FaHome></FaHome>Home</Link></li>
-                        <li><Link to="/classes"><FaCartPlus></FaCartPlus> Class</Link></li>
-                        <li><Link to="/instructors"><FaUser></FaUser> Instructors</Link></li>
-                    </ul>
+                    {
+                        isAdmin ?
+                            <>
+                                <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content bg-purple-50">
+                                    {/* Sidebar content here */}
+                                    <li><Link to="/dashboard/manageClasses"><FaBook></FaBook>Manage Classes</Link></li>
+                                    <li><Link to="/dashboard/allUsers"><FaUser />Manage Users</Link></li>
+                                    <div className="divider"></div>
+                                    <li><Link to="/"><FaHome></FaHome>Home</Link></li>
+                                    <li><Link to="/classes"><FaBook></FaBook> Classes</Link></li>
+                                    <li><Link to="/instructors"><FaUser></FaUser> Instructors</Link></li>
+                                </ul>
+                            </>
+                            :
+                            <>
+                                <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content bg-[#D1A054]">
+                                    {/* Sidebar content here */}
+                                    <li><Link to="/dashboard/myClasses"><FaBookmark></FaBookmark>Selected Class</Link></li>
+                                    <li><Link to="/dashboard/enrolledClasses"><FaWallet></FaWallet>My Enrolled Classes</Link></li>
+                                    <li><Link to="/dashboard/paymentHistory"><FaPaypal />Payment History</Link></li>
+                                    <div className="divider"></div>
+                                    <li><Link to="/"><FaHome></FaHome>Home</Link></li>
+                                    <li><Link to="/classes"><FaCartPlus></FaCartPlus> Classes</Link></li>
+                                    <li><Link to="/instructors"><FaUser></FaUser> Instructors</Link></li>
+                                </ul>
+                            </>
+                    }
 
                 </div>
             </div>

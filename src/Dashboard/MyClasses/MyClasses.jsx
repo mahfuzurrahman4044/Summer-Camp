@@ -136,7 +136,7 @@ const MyClasses = () => {
                             <td>
                                 <button
                                     onClick={() => handlePay(singleClass)}
-                                    className="btn btn-ghost bg-red-600 text-white"
+                                    className="btn bg-red-600 text-white"
                                 >
                                     {singleClass.paymentStatus == "Paid" ? "Paid" : <FaWallet />}
                                 </button>
@@ -144,7 +144,7 @@ const MyClasses = () => {
                             <td>
                                 <button
                                     onClick={() => handleDelete(singleClass._id)}
-                                    className="btn btn-ghost bg-red-600 text-white"
+                                    className="btn bg-red-600 text-white"
                                 >
                                     <FaTrash />
                                 </button>
