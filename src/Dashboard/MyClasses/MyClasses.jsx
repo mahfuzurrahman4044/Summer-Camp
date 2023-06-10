@@ -37,7 +37,33 @@ const MyClasses = () => {
     };
 
     const handlePay = (id) => {
-        console.log(id);
+        // console.log(id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Pay'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/selectedClass/${id}`, {
+                    method: 'PUT'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.modifiedCount > 0) {
+                            Swal.fire(
+                                'Paid',
+                                // 'Your file has been deleted.',
+                                'success'
+                            )
+                            refetch();
+                        }
+                    })
+            }
+        })
     };
 
     if (classes.length === 0) {
@@ -79,7 +105,7 @@ const MyClasses = () => {
                                     onClick={() => handlePay(singleClass._id)}
                                     className="btn btn-ghost bg-red-600 text-white"
                                 >
-                                    <FaWallet />
+                                    {singleClass.paymentStatus == "Paid" ? "Paid" : <FaWallet />}
                                 </button>
                             </td>
                             <td>
