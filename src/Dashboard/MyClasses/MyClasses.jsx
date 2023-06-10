@@ -6,6 +6,8 @@ const MyClasses = () => {
     const [refetch, classes] = UseQuery();
     // console.log(classes);
 
+    const selectedClass = classes.filter(singleClass => !singleClass?.paymentStatus);
+    // console.log(selectedClass);
     const handleDelete = (id) => {
         // console.log(id);
         Swal.fire({
@@ -36,37 +38,68 @@ const MyClasses = () => {
         })
     };
 
-    const handlePay = (id) => {
-        // console.log(id);
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'success',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Pay'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selectedClass/${id}`, {
-                    method: 'PUT'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.modifiedCount > 0) {
-                            Swal.fire(
-                                'Paid',
-                                // 'Your file has been deleted.',
-                                'success'
-                            )
-                            refetch();
-                        }
+    const handlePay = (singleClass) => {
+        if (singleClass.paymentStatus === "Paid") {
+            Swal.fire({
+                title: 'Already Paid',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
+        } else {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Pay'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/selectedClass/${singleClass._id}`, {
+                        method: 'PUT'
                     })
-            }
-        })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.message === "Payment confirmed and available class count reduced") {
+                                Swal.fire(
+                                    'Paid',
+                                    'The payment has been confirmed and the available class count has been reduced.',
+                                    'success'
+                                );
+                                refetch();
+                            } else if (data.message === "Payment confirmed, but failed to update the available class count") {
+                                Swal.fire(
+                                    'Paid',
+                                    'The payment has been confirmed, but failed to update the available class count.',
+                                    'success'
+                                );
+                                refetch();
+                            } else if (data.message === "Payment is already confirmed") {
+                                Swal.fire(
+                                    'Payment Already Confirmed',
+                                    'The payment for this class has already been confirmed.',
+                                    'info'
+                                );
+                            } else {
+                                Swal.fire(
+                                    'Payment Failed',
+                                    'Failed to update the payment confirmation.',
+                                    'error'
+                                );
+                            }
+                        });
+                }
+            });
+        }
     };
 
-    if (classes.length === 0) {
+
+    if (selectedClass.length === 0) {
         return <div>No classes available</div>;
     }
 
@@ -86,7 +119,7 @@ const MyClasses = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {classes.map((singleClass, index) => (
+                    {selectedClass.map((singleClass, index) => (
                         <tr key={singleClass._id}>
                             <td>{index + 1}</td>
                             <td>
@@ -102,7 +135,7 @@ const MyClasses = () => {
                             <td>${singleClass.price}</td>
                             <td>
                                 <button
-                                    onClick={() => handlePay(singleClass._id)}
+                                    onClick={() => handlePay(singleClass)}
                                     className="btn btn-ghost bg-red-600 text-white"
                                 >
                                     {singleClass.paymentStatus == "Paid" ? "Paid" : <FaWallet />}

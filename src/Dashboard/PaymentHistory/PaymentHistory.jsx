@@ -6,7 +6,7 @@ const PaymentHistory = () => {
   const enrolledClasses = classes?.filter((singleClass) => singleClass?.paymentStatus === 'Paid');
 
   // Sort payment history in descending order
-  const sortedPaymentHistory = enrolledClasses.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  const sortedPaymentHistory = enrolledClasses.sort((a, b) => b._id.localeCompare(a._id));
 
   return (
     <div>

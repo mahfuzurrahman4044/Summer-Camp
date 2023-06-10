@@ -9,11 +9,11 @@ const SignUp = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [error, setError] = useState("");
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     const onSubmit = (data) => {
         // console.log(data.name);
-        
+
         if (data.password !== data.confirmPassword) {
             setError("Password doesn't matched")
         }
@@ -30,12 +30,28 @@ const SignUp = () => {
                         timer: 1500
                     })
                     updateInfo(data.name, data.photoURL)
-                    .then(() => {
-                        console.log("User Updated")
-                    })
-                    .catch(error => {
-                        console.log(error.message)
-                    })
+
+                        .then(() => {
+                            // console.log("User Updated")
+                            const user = { name: data.name, email: data.email }
+                            console.log(data.name, data.email);
+                            fetch("http://localhost:5000/users", {
+                                method: "POST",
+                                headers: {
+                                    "content-type": "application/json"
+                                },
+                                body: JSON.stringify(user)
+                            })
+                                .then(res => res.json())
+                                .then(data => {
+                                    console.log(data);
+                                })
+
+
+                        })
+                        .catch(error => {
+                            console.log(error.message)
+                        })
                     navigate("/")
                 });
 
