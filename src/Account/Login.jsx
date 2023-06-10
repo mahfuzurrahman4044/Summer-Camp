@@ -4,7 +4,6 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaGoogle } from 'react-icons/fa';
 
-
 const Login = () => {
     const [error, setError] = useState();
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -21,7 +20,7 @@ const Login = () => {
 
         signIn(email, password)
             .then(res => {
-                console.log(res.user)
+                // console.log(res.user)
                 form.reset();
                 navigate(from, { replace: true })
                 setError("");
@@ -40,7 +39,21 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
+                const user = { name: loggedUser.name, email: loggedUser.email }
+
+                fetch("http://localhost:5000/users", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+
                 navigate(from, { replace: true })
                 setError("");
                 Swal.fire({
