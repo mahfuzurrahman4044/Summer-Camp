@@ -26,7 +26,7 @@ const NavBar = () => {
                             <li><Link to="/instructors">Instructors</Link></li>
 
                             {
-                                user ? <><li><Link>Dashboard</Link></li>
+                                user ? <><li><Link to="/dashboard">Dashboard</Link></li>
                                     <li><Link><div className="userImg"><img src={user.photoURL} alt="" /></div></Link></li>
                                     <li><button onClick={handleLogOut}>Log Out</button></li></>
                                     : <li><Link to="/login">Login</Link></li>
@@ -43,7 +43,7 @@ const NavBar = () => {
                         <li className=""><Link to="/classes">Classes</Link></li>
                         <li className=""><Link to="/instructors">Instructors</Link></li>
                         {
-                            user ? <><li><Link>Dashboard</Link></li>
+                            user ? <><li><Link to="/dashboard">Dashboard</Link></li>
                                 <li><Link><div className="userImg"><img src={user.photoURL} alt="" /></div></Link></li>
                                 <li><button onClick={handleLogOut}>Log Out</button></li></>
                                 : <li><Link to="/login">Login</Link></li>
