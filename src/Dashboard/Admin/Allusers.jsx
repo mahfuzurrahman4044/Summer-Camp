@@ -1,8 +1,10 @@
 import { FaUser, FaUserSecret } from "react-icons/fa";
 import UseUsers from "../../UseQuery/UseUsers";
 import Swal from "sweetalert2";
+import UseAxiosSecure from "../../UseAxiosSecure/UseAxiosSecure";
 
 const Allusers = () => {
+  const [axiosSecure]=UseAxiosSecure();
   const { data: users = [], refetch } = UseUsers();
 
   const handleInstructor = (user) => {
