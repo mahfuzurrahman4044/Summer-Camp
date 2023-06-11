@@ -3,56 +3,55 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useEffect, useState } from "react";
-import "./PopularClassSection.css"
+import "./PopularClassSection.css";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
-import "aos/dist/aos.css"
+import "aos/dist/aos.css";
 import Aos from "aos";
 
 const PopularClassSection = () => {
-    useEffect(() => {
-        Aos.init()
-    }, [])
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
-    const [popularClasses, setPopularClasses] = useState();
-    //   console.log(popularClasses);
+  const [popularClasses, setPopularClasses] = useState();
+  //   console.log(popularClasses);
 
-    useEffect(() => {
-        fetch("http://localhost:5000/classes")
-            .then(res => res.json())
-            .then(data => {
-                setPopularClasses(data);
-            });
-    }, []);
+  useEffect(() => {
+    fetch("http://localhost:5000/classes")
+      .then((res) => res.json())
+      .then((data) => {
+        setPopularClasses(data);
+      });
+  }, []);
 
-    const results = popularClasses?.filter(
-        popularClass => popularClass.type === "popular"
-    );
+  const results = popularClasses?.filter(
+    (popularClass) => popularClass.type === "popular"
+  );
 
-    return (
-        <div data-aos="fade-up">
-            <SectionTitle title={"Popular Classes"}></SectionTitle>
-            <div className="class my-6" data-aos="fade-up">
-                <Swiper
-                    slidesPerView={4}
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                >
-                    {results?.map(result =>
-                        <SwiperSlide key={result._id}>
-                            <img className="rounded-md" src={result.img} alt="" />
-                            <h3 className="text-2xl font-semibold title">{result.classTitle}</h3>
-                        </SwiperSlide>
-                    )}
-                </Swiper>
+  return (
+    <div data-aos="fade-up">
+      <SectionTitle title={"Popular Classes"}></SectionTitle>
+      <div className="grid grid-cols-3 ms-8">
+        {results?.map((result) => (
+          <div key={result._id}>
+            <div className="card w-96 bg-base-100 shadow-xl mb-4">
+              <figure className="px-10 pt-10">
+                <img src={result.img} alt="Shoes" className="rounded-xl" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">{result.classTitle}</h2>
+                {/* <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div className="card-actions">
+                  <button className="btn btn-primary">Buy Now</button>
+                </div> */}
+              </div>
             </div>
-        </div>
-    );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default PopularClassSection;

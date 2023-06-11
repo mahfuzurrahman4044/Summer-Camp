@@ -27,7 +27,7 @@ const Login = () => {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Account has been created',
+                    title: 'Logged in successfully',
                     showConfirmButton: false,
                     timer: 1500
                 })
@@ -59,7 +59,7 @@ const Login = () => {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Account has been created',
+                    title: 'Logged in successfully',
                     showConfirmButton: false,
                     timer: 1500
                 })
