@@ -20,7 +20,7 @@ const MyClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selectedClass/${id}`, {
+                fetch(`https://summer-camp-server-blue.vercel.app/selectedClass/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -60,7 +60,7 @@ const MyClasses = () => {
                 confirmButtonText: 'Pay'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/selectedClass/${singleClass._id}`, {
+                    fetch(`https://summer-camp-server-blue.vercel.app/selectedClass/${singleClass._id}`, {
                         method: 'PUT'
                     })
                         .then(res => res.json())

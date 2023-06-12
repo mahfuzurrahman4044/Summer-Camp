@@ -5,7 +5,7 @@ const ManageClasses = () => {
   const [classes, setClasses] = useState([]);
   //   console.log(classes);
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
@@ -14,7 +14,7 @@ const ManageClasses = () => {
 
   const handleApprovedStatus = (id) => {
     //     console.log(id);
-    fetch(`http://localhost:5000/classes/approved/${id}`, {
+    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes/approved/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ const ManageClasses = () => {
 
   const handleDenyStatus = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/classes/deny/${id}`, {
+    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes/deny/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -52,9 +52,7 @@ const ManageClasses = () => {
       });
   };
 
-  const handleFeedback = () => {
-    console.log("Clicked");
-  };
+
 
   return (
     <div>

@@ -18,7 +18,7 @@ const Allusers = () => {
         timer: 1500,
       });
     } else {
-      fetch(`http://localhost:5000/allUsers/${user._id}`, {
+      fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/allUsers/${user._id}`, {
         method: "PATCH",
       })
         .then((res) => res.json())
@@ -40,7 +40,7 @@ const Allusers = () => {
         timer: 1500,
       });
     } else {
-      fetch(`http://localhost:5000/allUsers/${user._id}`, {
+      fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/allUsers/${user._id}`, {
         method: "PUT",
       })
         .then((res) => res.json())

@@ -22,6 +22,8 @@ import PaymentHistory from "./Dashboard/PaymentHistory/PaymentHistory";
 import Allusers from "./Dashboard/Admin/Allusers";
 import ManageClasses from "./Dashboard/Admin/ManageClasses";
 import AdminRoute from "./AdminRoute/AdminRoute";
+import AddClass from "./Dashboard/Instructor/AddClass";
+import MyClass from "./Dashboard/Instructor/MyClass";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +83,14 @@ const router = createBrowserRouter([
             <ManageClasses></ManageClasses>
           </AdminRoute>
         ),
+      },
+      {
+        path: "/dashboard/addClass",
+        element: <AddClass></AddClass>,
+      },
+      {
+        path: "/dashboard/manageClass",
+        element: <MyClass></MyClass>
       },
     ],
   },

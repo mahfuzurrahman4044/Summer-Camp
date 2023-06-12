@@ -1,10 +1,13 @@
 import UseQuery from "../../UseQuery/UseQuery";
 
 const EnrolledClasses = () => {
-    const [refetch, classes] = UseQuery();
+    const [, classes] = UseQuery();
     // console.log(classes);
     const enrolledClasses = classes?.filter(singleClass => singleClass?.paymentStatus == "Paid");
     // console.log(enrolledClasses);
+    if (enrolledClasses.length === 0) {
+        return <div>No classes available</div>;
+    }
     return (
         <div>
             <table className="table w-full">
