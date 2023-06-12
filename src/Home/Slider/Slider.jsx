@@ -16,7 +16,7 @@ const Slider = () => {
         Aos.init()
     }, [])
     return (
-        <Carousel className="mx-5" data-aos="fade-up">
+        <Carousel className="mx-5 slideRes" data-aos="fade-up">
             <div className="slider-img">
                 <img className="rounded-md" src={img1} />
             </div>

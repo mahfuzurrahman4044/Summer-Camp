@@ -8,9 +8,11 @@ figure img{
         display: flex;
         flex-direction: column;
         justify-content: center;
+
     }
 
     .card{
         margin-top: 10px;
+        width: 250px;
     }
 }

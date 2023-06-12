@@ -19,7 +19,7 @@ const UseQuery = () => {
       return res.data;
     },
     // queryFn: async () => {
-    //     const res = await fetch(`http://localhost:5000/uniqueClass/${user?.email}`, {
+    //     const res = await fetch(`https://summer-camp-server-blue.vercel.app/uniqueClass/${user?.email}`, {
     //         headers: {
     //             authorization: `bearer ${token}`
     //         }
