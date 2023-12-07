@@ -35,7 +35,7 @@ const ClassCard = ({ singleClass }) => {
         price: price,
         email: user.email,
       };
-      fetch("http://localhost:5000/selectedClass", {
+      fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/selectedClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",

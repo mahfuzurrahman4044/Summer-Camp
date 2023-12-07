@@ -37,7 +37,7 @@ const SignUp = () => {
             // console.log("User Updated")
             const user = { name: data.name, email: data.email };
             console.log(data.name, data.email);
-            fetch("http://localhost:5000/users", {
+            fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
