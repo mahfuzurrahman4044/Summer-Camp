@@ -4,8 +4,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAdmin from "../../UseQuery/UseAdmin";
 import UseInstructer from "../../UseQuery/UseInstructer";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ClassCard = ({ singleClass }) => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   const [isAdmin] = UseAdmin();
   const [isInstructer] = UseInstructer();
 
@@ -17,13 +24,6 @@ const ClassCard = ({ singleClass }) => {
   const location = useLocation();
 
   const handleClass = (items) => {
-    // console.log(items);
-    // const { img, classTitle, instructorName, availableClasses, price } = items;
-    // const selectedClass = { image: img, classTitle: classTitle, instructorName: instructorName, availableClasses: availableClasses, price: price };
-    // if (!user?.email) {
-    //     navigate("/login")
-    // }
-    // console.log(selectedClass);
     if (user !== null && user.email) {
       const { img, classTitle, instructorName, availableClasses, price } =
         items;
@@ -35,7 +35,7 @@ const ClassCard = ({ singleClass }) => {
         price: price,
         email: user.email,
       };
-      fetch("https://summer-camp-server-blue.vercel.app/selectedClass", {
+      fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/selectedClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -75,9 +75,11 @@ const ClassCard = ({ singleClass }) => {
     <div
       className={`${
         availableClasses === 0
-          ? "card w-96 bg-red-600 shadow-xl mb-3"
-          : "card w-96 bg-base-100 shadow-xl mb-3"
+          ? "card w-96 bg-red-600 shadow-xl mb-10"
+          : "card w-96 bg-base-300 shadow-xl mb-10"
       }`}
+      data-aos="flip-left"
+      data-aos-duration="2000"
     >
       <figure className="px-10 pt-10">
         <img src={img} alt="Shoes" className="rounded-xl" />

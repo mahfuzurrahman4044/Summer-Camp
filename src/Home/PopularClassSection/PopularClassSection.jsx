@@ -1,4 +1,4 @@
-import "./PopularClassSection.css"
+import "./PopularClassSection.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
@@ -17,7 +17,7 @@ const PopularClassSection = () => {
   //   console.log(popularClasses);
 
   useEffect(() => {
-    fetch("https://summer-camp-server-blue.vercel.app/classes")
+    fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setPopularClasses(data);
@@ -25,25 +25,31 @@ const PopularClassSection = () => {
   }, []);
 
   const results = popularClasses?.filter(
-    (popularClass) => popularClass.type === "popular"
+    (popularClass) =>
+      popularClass.type === "popular" && popularClass.status === "Approved"
   );
 
   return (
-    <div data-aos="fade-up">
+    <div
+      className="bg-gradient-to-r from-violet-500 to-fuchsia-500"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <SectionTitle title={"Popular Classes"}></SectionTitle>
-      <div className="grid lg:grid-cols-3 ms-8">
+      <div className="grid lg:grid-cols-3 ms-20">
         {results?.map((result) => (
-          <div key={result._id}>
-            <div className="card lg:w-96 bg-base-100 shadow-xl mb-4 cardRes">
+          <div
+            data-aos="flip-left"
+            data-aos-duration="2000"
+            className="lg:mb-5"
+            key={result._id}
+          >
+            <div className="card lg:w-96 bg-base-300 shadow-xl mb-4 cardRes">
               <figure className="px-10 pt-10 class">
                 <img src={result.img} alt="Shoes" className="rounded-xl" />
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">{result.classTitle}</h2>
-                {/* <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div> */}
               </div>
             </div>
           </div>

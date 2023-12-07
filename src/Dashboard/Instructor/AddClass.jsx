@@ -43,39 +43,31 @@ const AddClass = () => {
           };
           // console.log(classItems);
           axiosSecure.post("/insertClass", classItems).then((data) => {
-            // console.log(data.data);
+            console.log(data);
 
-            if (data.data.insertedId) {
+            if (data.insertedId) {
               reset();
               Swal.fire({
                 position: "center",
                 icon: "success",
                 title: "Class has been added successfully",
-                showConfirmButton: false,
+                showConfirmButton: true,
                 timer: 1500,
               });
             }
           });
         }
       });
-    // reset();
-    // console.log(
-    //   name,
-    //   image,
-    //   instructorName,
-    //   instructorEmail,
-    //   availableSeats,
-    //   price
-    // );
+
   };
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Add Class</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-300">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">

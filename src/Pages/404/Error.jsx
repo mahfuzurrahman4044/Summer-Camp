@@ -5,7 +5,7 @@ import img from "../../assets/Error/how-to-find-and-fix-404-errors-in-wordpress.
 
 const Error = () => {
     return (
-        <div className="">
+        <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500">
             <div className='error flex justify-center pt-10'>
                 <img className="rounded-md" src={img} alt="" />
             </div>

@@ -11,8 +11,8 @@ const NavBar = () => {
     logOut();
   };
   return (
-    <div className="">
-      <div className="navbar bg-base-200 p-10">
+    <div className="opacity-90">
+      <div className="navbar lg:px-16 lg:py-7 bg-gradient-to-r from-violet-500 to-fuchsia-500">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,10 +33,10 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content lg:mt-3 lg:p-2 shadow bg-gradient-to-r from-violet-500 to-fuchsia-500 opacity-90 rounded-box w-52"
             >
               <li>
-                <Link>Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/classes">Classes</Link>

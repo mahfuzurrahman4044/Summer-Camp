@@ -1,37 +1,42 @@
 .logo img {
-    height: 90px;
-    width: 90px;
-    border: 1px;
-    border-radius: 100%;
+  height: 80px;
+  width: 80px;
+  border: 1px;
+  border-radius: 100%;
 }
 
 .userImg img {
+  height: 50px;
+  width: 50px;
+  border: 1px;
+  border-radius: 100%;
+  position: relative;
+  bottom: 15px;
+}
+
+.active {
+  background-color: beige;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .logo img {
     height: 50px;
     width: 50px;
     border: 1px;
     border-radius: 100%;
+  }
+
+  .navbar-start {
+    margin-bottom: 210px;
+  }
+
+  .userImg img {
+    height: 40px;
+    width: 40px;
+    border: 1px;
+    border-radius: 100%;
     position: relative;
-    bottom: 15px;
-}
-
-@media only screen and (max-width: 480px) {
-    .logo img {
-        height: 50px;
-        width: 50px;
-        border: 1px;
-        border-radius: 100%;
-    }
-
-    .navbar-start {
-        margin-bottom: 150px;
-    }
-
-    .userImg img {
-        height: 40px;
-        width: 40px;
-        border: 1px;
-        border-radius: 100%;
-        position: relative;
-        top: 5px;
-    }
+    top: 5px;
+  }
 }

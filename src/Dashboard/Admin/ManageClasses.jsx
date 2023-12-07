@@ -5,7 +5,7 @@ const ManageClasses = () => {
   const [classes, setClasses] = useState([]);
   //   console.log(classes);
   useEffect(() => {
-    fetch("https://summer-camp-server-blue.vercel.app/classes")
+    fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
@@ -14,7 +14,7 @@ const ManageClasses = () => {
 
   const handleApprovedStatus = (id) => {
     //     console.log(id);
-    fetch(`https://summer-camp-server-blue.vercel.app/classes/approved/${id}`, {
+    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes/approved/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ const ManageClasses = () => {
 
   const handleDenyStatus = (id) => {
     console.log(id);
-    fetch(`https://summer-camp-server-blue.vercel.app/classes/deny/${id}`, {
+    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes/deny/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -52,11 +52,9 @@ const ManageClasses = () => {
       });
   };
 
-
-
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4 mt-10">
+      <div className="grid lg:grid-cols-2 lg:gap-4 my-10">
         {classes.map((singleClass) => (
           <div key={singleClass._id}>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -75,7 +73,7 @@ const ManageClasses = () => {
                 <div>
                   <button
                     className={`${
-                      singleClass.status == "pending"
+                      !singleClass.status
                         ? "btn btn-outline border border-0 border-b-4 border-primary m-1"
                         : "btn-disabled btn m-1"
                     }`}
@@ -85,7 +83,7 @@ const ManageClasses = () => {
                   </button>
                   <button
                     className={`${
-                      singleClass.status == "pending"
+                      !singleClass.status
                         ? "btn btn-outline border border-0 border-b-4 border-primary m-1"
                         : "btn-disabled btn m-1"
                     }`}

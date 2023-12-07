@@ -1,50 +1,55 @@
-import { useContext } from "react";
-import UseQuery from "../../UseQuery/UseQuery";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyClass = () => {
   const { user } = useContext(AuthContext);
-  const [, classes] = UseQuery();
-  const enrolledClasses = classes?.filter(
-    (singleClass) =>
-      singleClass?.paymentStatus == "Paid" &&
-      singleClass.email == user.email
-  );
+  const [classes, setClasses] = useState([]);
 
-  if (enrolledClasses.length === 0) {
+  useEffect(() => {
+    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setClasses(data);
+        console.log(classes);
+      });
+  }, []);
+
+  if (classes.length === 0) {
     return <div>No classes available</div>;
   }
+
   return (
     <div>
-      <table className="table w-full">
+      <table className="table w-full border-collapse">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Image</th>
-            <th>Class</th>
-            <th>Instructor</th>
-            <th>Available seats</th>
-            <th>Price</th>
+            <th className="border border-base-300 text-center">#</th>
+            <th className="border border-base-300 text-center">Image</th>
+            <th className="border border-base-300 text-center">Class</th>
+            <th className="border border-base-300 text-center">Instructor</th>
+            <th className="border border-base-300 text-center">Available seats</th>
+            <th className="border border-base-300 text-center">Price</th>
           </tr>
         </thead>
         <tbody>
-          {enrolledClasses.map((singleClass, index) => (
+          {classes.map((singleClass, index) => (
             <tr key={singleClass._id}>
-              <td>{index + 1}</td>
-              <td>
+              <td className="border border-base-300 text-center">{index + 1}</td>
+              <td className="border border-base-300 text-center">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
                     <img
-                      src={singleClass.image}
-                      alt="Avatar Tailwind CSS Component"
+                      src={singleClass.img}
+                      alt="Class Image"
+                      className="rounded-full object-cover w-full h-full"
                     />
                   </div>
                 </div>
               </td>
-              <td>{singleClass.classTitle}</td>
-              <td>{singleClass.instructorName}</td>
-              <td>{singleClass.availableClasses}</td>
-              <td>${singleClass.price}</td>
+              <td className="border border-base-300">{singleClass.classTitle}</td>
+              <td className="border border-base-300">{singleClass.instructorName}</td>
+              <td className="border border-base-300 text-center">{singleClass.availableClasses}</td>
+              <td className="border border-base-300 text-center">${singleClass.price}</td>
             </tr>
           ))}
         </tbody>

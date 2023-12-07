@@ -8,6 +8,8 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import app from "../firebase";
 import axios from "axios";
@@ -33,9 +35,17 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const verifyEmail = (user) => {
+    return sendEmailVerification(user);
+  };
+
   const signIn = (email, password) => {
     setLoader(true);
     return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const resetPass = (email) => {
+    return sendPasswordResetEmail(auth, email);
   };
 
   const googleProvider = new GoogleAuthProvider();
@@ -58,7 +68,7 @@ const AuthProvider = ({ children }) => {
 
       if (currentUser) {
         axios
-          .post("https://summer-camp-server-blue.vercel.app/jwt", { email: currentUser.email })
+          .post("https://summer-camp-server-mahfuzurrahman4044.vercel.app/jwt", { email: currentUser.email })
           .then((data) => {
             // console.log(data.data.token)
             localStorage.setItem("access-token", data.data.token);
@@ -78,7 +88,9 @@ const AuthProvider = ({ children }) => {
     loader,
     createUser,
     updateInfo,
+    verifyEmail,
     signIn,
+    resetPass,
     googleSignIn,
     logOut,
   };

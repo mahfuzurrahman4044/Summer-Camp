@@ -8,7 +8,7 @@ const UseUsers = () => {
     return res.data;
   });
 
-  return { data: users, refetch }; // Return the data and refetch function
+  return { data: users, refetch };
 };
 
 export default UseUsers;
