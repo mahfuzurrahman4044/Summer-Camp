@@ -4,7 +4,6 @@ import {
   FaBookmark,
   FaCartPlus,
   FaHome,
-  FaPaypal,
   FaUser,
   FaWallet,
 } from "react-icons/fa";
@@ -15,6 +14,7 @@ const Dashboard = () => {
   const [isAdmin] = UseAdmin();
   console.log(isAdmin);
   const [isInstructor] = UseInstructer();
+  console.log(isInstructor);
 
   return (
     <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500">

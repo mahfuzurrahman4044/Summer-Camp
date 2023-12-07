@@ -5,16 +5,19 @@ const Classes = () => {
   const [classes, setClasses] = useState([]);
   // console.log(classes);
   useEffect(() => {
-    fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
+        // console.log(classes);
       });
   }, []);
 
   const approvedClasses = classes.filter(
     (classes) => classes?.status === "Approved"
   );
+
+  // console.log(approvedClasses);
 
   return (
     <div className="grid lg:grid-cols-3 ps-20 lg:py-5 bg-gradient-to-r from-violet-500 to-fuchsia-500">

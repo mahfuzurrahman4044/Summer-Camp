@@ -17,7 +17,7 @@ const PopularClassSection = () => {
   //   console.log(popularClasses);
 
   useEffect(() => {
-    fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => {
         setPopularClasses(data);

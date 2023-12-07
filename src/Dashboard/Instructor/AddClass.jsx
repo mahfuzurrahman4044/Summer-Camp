@@ -44,21 +44,18 @@ const AddClass = () => {
           // console.log(classItems);
           axiosSecure.post("/insertClass", classItems).then((data) => {
             console.log(data);
+            reset();
 
-            if (data.insertedId) {
-              reset();
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Class has been added successfully",
-                showConfirmButton: true,
-                timer: 1500,
-              });
-            }
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Class has been added successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           });
         }
       });
-
   };
   return (
     <div>

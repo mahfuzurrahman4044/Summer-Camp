@@ -11,19 +11,25 @@ const Allusers = () => {
     if (user.role === "instructor") {
       Swal.fire({
         position: "center",
-        icon: "success",
         title: `${user.email} is already an instructor`,
         showConfirmButton: false,
         timer: 1500,
       });
     } else {
-      fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/allUsers/${user._id}`, {
+      fetch(`http://localhost:5000/allUsers/${user._id}`, {
         method: "PATCH",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           refetch();
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${user.email} is an instructor now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
         });
     }
   };
@@ -32,20 +38,25 @@ const Allusers = () => {
     if (user.role === "admin") {
       Swal.fire({
         position: "center",
-        icon: "success",
         title: `${user.email} is already an admin`,
         showConfirmButton: false,
         timer: 1500,
       });
     } else {
-      fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/allUsers/${user._id}`, {
+      fetch(`http://localhost:5000/allUsers/${user._id}`, {
         method: "PUT",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           refetch();
-        });
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${user.email} is an admin now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });        });
     }
   };
 

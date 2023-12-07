@@ -35,7 +35,7 @@ const ClassCard = ({ singleClass }) => {
         price: price,
         email: user.email,
       };
-      fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/selectedClass", {
+      fetch("http://localhost:5000/selectedClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -57,7 +57,7 @@ const ClassCard = ({ singleClass }) => {
         });
     } else {
       Swal.fire({
-        title: "Please login to order the food",
+        title: "Please login",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
