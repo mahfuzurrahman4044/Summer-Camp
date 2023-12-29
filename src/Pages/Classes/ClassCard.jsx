@@ -2,8 +2,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import UseAdmin from "../../UseQuery/UseAdmin";
-import UseInstructer from "../../UseQuery/UseInstructer";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -18,9 +16,9 @@ const ClassCard = ({ singleClass }) => {
   const { user } = useContext(AuthContext);
   // console.log(user);
 
-  const [isAdmin] = UseAdmin();
+  const isAdmin = user?.role=="admin"
   // console.log(instructorName);
-  const [isInstructer] = UseInstructer();
+  const isInstructer = user?.role=="instructor"
   // console.log(isInstructer);
 
   const isUserLoggedIn = !!user;
