@@ -7,7 +7,7 @@ const EnrolledClasses = () => {
   const [enrolledClasses, setEnrolledClasses] = useState([]);
 
   useEffect(() => {
-    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/payments/${user?.email}`)
+    fetch(`https://summer-camp-server-pied-alpha.vercel.app/payments/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -23,7 +23,7 @@ const EnrolledClasses = () => {
   }
 
   return (
-    <div>
+    <div className="py-10">
       <table className="table w-full border-collapse">
         <thead>
           <tr>

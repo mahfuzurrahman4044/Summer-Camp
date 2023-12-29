@@ -74,18 +74,18 @@ const NavBar = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="">
-              <Link>Home</Link>
+            <li className="font-semibold">
+              <Link to="/">Home</Link>
             </li>
-            <li className="">
+            <li className="font-semibold">
               <Link to="/classes">Classes</Link>
             </li>
-            <li className="">
+            <li className="font-semibold">
               <Link to="/instructors">Instructors</Link>
             </li>
             {user ? (
               <>
-                <li>
+                <li className="font-semibold">
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
                 <li>
@@ -95,12 +95,12 @@ const NavBar = () => {
                     </div>
                   </Link>
                 </li>
-                <li>
+                <li className="font-semibold">
                   <button onClick={handleLogOut}>Log Out</button>
                 </li>
               </>
             ) : (
-              <li>
+              <li className="font-semibold">
                 <Link to="/login">Login</Link>
               </li>
             )}

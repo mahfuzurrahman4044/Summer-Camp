@@ -13,13 +13,20 @@ const ClassCard = ({ singleClass }) => {
     Aos.init();
   }, []);
 
-  const [isAdmin] = UseAdmin();
-  const [isInstructer] = UseInstructer();
-
   const { img, classTitle, instructorName, availableClasses, price } =
     singleClass;
   const { user } = useContext(AuthContext);
   // console.log(user);
+
+  const [isAdmin] = UseAdmin();
+  // console.log(instructorName);
+  const [isInstructer] = UseInstructer();
+  // console.log(isInstructer);
+
+  const isUserLoggedIn = !!user;
+  const isButtonDisabled =
+    availableClasses === 0 || (isUserLoggedIn && (isAdmin || isInstructer));
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,6 +35,7 @@ const ClassCard = ({ singleClass }) => {
       const { img, classTitle, instructorName, availableClasses, price } =
         items;
       const selectedClass = {
+        id: items._id,
         image: img,
         classTitle: classTitle,
         instructorName: instructorName,
@@ -35,7 +43,7 @@ const ClassCard = ({ singleClass }) => {
         price: price,
         email: user.email,
       };
-      fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/selectedClass", {
+      fetch("https://summer-camp-server-pied-alpha.vercel.app/selectedClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -73,11 +81,7 @@ const ClassCard = ({ singleClass }) => {
 
   return (
     <div
-      className={`${
-        availableClasses === 0
-          ? "card w-96 bg-red-600 shadow-xl mb-10"
-          : "card w-96 bg-base-300 shadow-xl mb-10"
-      }`}
+      className="card w-96 bg-base-300 shadow-xl mb-10"
       data-aos="flip-left"
       data-aos-duration="2000"
     >
@@ -93,7 +97,7 @@ const ClassCard = ({ singleClass }) => {
           <button
             onClick={() => handleClass(singleClass)}
             className={`${
-              availableClasses == 0 || isAdmin || isInstructer
+              availableClasses === 0 || isButtonDisabled
                 ? "btn-disabled rounded-md p-2"
                 : "btn btn-outline bg-slate-100 border-0 border-b-4 border-primary"
             }`}

@@ -27,7 +27,7 @@ const ExtraSection = () => {
           <figure className="px-10 pt-10">
             <img src={img1} alt="Shoes" className="rounded-xl" />
           </figure>
-          <div className="card-body items-center text-left">
+          <div className="card-body items-center text-justify">
             <h2>
               The Summer Camp service exceeded my expectations in every way. The
               staff members were friendly, attentive, and knowledgeable,
@@ -47,7 +47,7 @@ const ExtraSection = () => {
           <figure className="px-10 pt-10">
             <img src={img2} alt="Shoes" className="rounded-xl" />
           </figure>
-          <div className="card-body items-center text-left">
+          <div className="card-body items-center  text-justify">
             <h2>
               While the Summer Camp service provided a decent experience
               overall, there were a few areas that could be improved. The
@@ -67,7 +67,7 @@ const ExtraSection = () => {
           <figure className="px-10 pt-10">
             <img src={img3} alt="Shoes" className="rounded-xl" />
           </figure>
-          <div className="card-body items-center text-left">
+          <div className="card-body items-center  text-justify">
             <h2>
               I had a mixed experience with the Summer Camp service. On the
               positive side, the staff members were enthusiastic and supportive,

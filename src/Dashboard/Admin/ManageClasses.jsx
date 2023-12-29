@@ -5,7 +5,7 @@ const ManageClasses = () => {
   const [classes, setClasses] = useState([]);
   //   console.log(classes);
   useEffect(() => {
-    fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes")
+    fetch("https://summer-camp-server-pied-alpha.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
@@ -14,7 +14,7 @@ const ManageClasses = () => {
 
   const handleApprovedStatus = (id) => {
         // console.log(id);
-    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes/approved/${id}`, {
+    fetch(`https://summer-camp-server-pied-alpha.vercel.app/classes/approved/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ const ManageClasses = () => {
 
   const handleDenyStatus = (id) => {
     console.log(id);
-    fetch(`https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes/deny/${id}`, {
+    fetch(`https://summer-camp-server-pied-alpha.vercel.app/classes/deny/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

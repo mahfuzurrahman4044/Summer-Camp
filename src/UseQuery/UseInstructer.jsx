@@ -8,11 +8,14 @@ const UseInstructer = () => {
   const [axiosSecure] = UseAxiosSecure();
   const { data: isInstructer, isLoading: isInstructerLoading } = useQuery({
     queryKey: ["isInstructer", user?.email],
-    enabled: !loader,
+    enabled: user?.email !== undefined && !loader,
     queryFn: async () => {
-      const res = await axiosSecure.get(`/selectedInstructor/${user?.email}`);
-      console.log(res.data);
-      return res.data.instructor;
+      if (user?.email) {
+        const res = await axiosSecure.get(`/selectedInstructor/${user.email}`);
+        console.log(res.data);
+        return res.data.instructor;
+      }
+      return null;
     },
   });
   return [isInstructer, isInstructerLoading];

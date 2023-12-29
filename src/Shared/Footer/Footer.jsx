@@ -15,30 +15,30 @@ const Footer = () => {
         //   data-aos-duration="2000"
       >
         <div className="lg:ps-10">
-          <div className="logo lg:ps-0 ps-48">
+          <div className="logo lg:ps-0 ps-40">
             <img src={logo} alt="" />
           </div>
-          <p className="lg:text-left text-center lg:ps-0 ps-28">
+          <p className="lg:text-left text-center lg:ps-0 ps-20">
             Summer Camp Learning School
             <br />
             Providing reliable service since 1992
           </p>
         </div>
-        <div className="lg:text-left text-center lg:ps-0 ps-44">
+        <div className="lg:text-left text-center lg:ps-0 ps-36">
           <span className="footer-title">Services</span>
           <a className="link link-hover">Sports Training</a>
           <a className="link link-hover">Excercise</a>
           <a className="link link-hover">Competetion Joining</a>
           <a className="link link-hover">Sports Consult</a>
         </div>
-        <div className="lg:text-left text-center lg:ps-0 ps-44">
+        <div className="lg:text-left text-center lg:ps-0 ps-36">
           <span className="footer-title">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </div>
-        <div className="lg:text-left text-center lg:ps-0 ps-44">
+        <div className="lg:text-left text-center lg:ps-0 ps-36">
           <span className="footer-title">Legal</span>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>

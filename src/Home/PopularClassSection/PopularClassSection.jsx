@@ -17,7 +17,7 @@ const PopularClassSection = () => {
   //   console.log(popularClasses);
 
   useEffect(() => {
-    fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/classes")
+    fetch("https://summer-camp-server-pied-alpha.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         setPopularClasses(data);
@@ -36,7 +36,7 @@ const PopularClassSection = () => {
       data-aos-duration="2000"
     >
       <SectionTitle title={"Popular Classes"}></SectionTitle>
-      <div className="grid lg:grid-cols-3 ms-20">
+      <div className="grid lg:grid-cols-3 lg:ps-20 ps-16">
         {results?.map((result) => (
           <div
             data-aos="flip-left"

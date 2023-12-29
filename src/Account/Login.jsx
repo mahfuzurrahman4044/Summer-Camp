@@ -53,7 +53,7 @@ const Login = () => {
         // console.log(loggedUser);
         const user = { name: loggedUser.name, email: loggedUser.email };
 
-        fetch("https://summer-camp-server-mahfuzurrahman4044.vercel.app/users", {
+        fetch("https://summer-camp-server-pied-alpha.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
