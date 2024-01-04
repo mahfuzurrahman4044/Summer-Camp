@@ -51,10 +51,11 @@ const NavBar = () => {
                     <Link to="/dashboard">Dashboard</Link>
                   </li>
                   <li>
-                    <Link>
-                      <div className="userImg">
+                    <Link to="/profile">
+                      {/* <div className="userImg">
                         <img src={user.photoURL} alt="" />
-                      </div>
+                      </div> */}
+                      <div>Profile</div>
                     </Link>
                   </li>
                   <li>
@@ -62,9 +63,14 @@ const NavBar = () => {
                   </li>
                 </>
               ) : (
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
+                <div>
+                  <li>
+                    <Link to="/login">Log In</Link>
+                  </li>
+                  <li>
+                    <Link to="/signup">Sign Up</Link>
+                  </li>
+                </div>
               )}
             </ul>
           </div>
@@ -88,11 +94,12 @@ const NavBar = () => {
                 <li className="font-semibold">
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
-                <li>
-                  <Link>
-                    <div className="userImg">
-                      <img src={user.photoURL} alt="" />
-                    </div>
+                <li className="font-semibold">
+                  <Link to="/profile">
+                    {/* <div className="userImg">
+                        <img src={user.photoURL} alt="" />
+                      </div> */}
+                    <div>Profile</div>
                   </Link>
                 </li>
                 <li className="font-semibold">
@@ -100,9 +107,14 @@ const NavBar = () => {
                 </li>
               </>
             ) : (
-              <li className="font-semibold">
-                <Link to="/login">Login</Link>
-              </li>
+              <ul className="flex">
+                <li className="font-semibold">
+                  <Link to="/login">Log In</Link>
+                </li>
+                <li className="font-semibold">
+                  <Link to="/signup">Sign Up</Link>
+                </li>
+              </ul>
             )}
           </ul>
         </div>

@@ -28,10 +28,11 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const updateInfo = (name, photo) => {
+  const updateInfo = (name, photo, phoneNumber) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
+      phoneNumber: phoneNumber,
     });
   };
 
@@ -68,7 +69,9 @@ const AuthProvider = ({ children }) => {
 
       if (currentUser) {
         axios
-          .post("https://summer-camp-server-pied-alpha.vercel.app/jwt", { email: currentUser.email })
+          .post("https://summer-camp-server-pied-alpha.vercel.app/jwt", {
+            email: currentUser.email,
+          })
           .then((data) => {
             // console.log(data.data.token)
             localStorage.setItem("access-token", data.data.token);

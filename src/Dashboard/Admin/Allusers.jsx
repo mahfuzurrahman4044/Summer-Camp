@@ -56,8 +56,27 @@ const Allusers = () => {
             title: `${user.email} is an admin now`,
             showConfirmButton: false,
             timer: 1500,
-          });        });
+          });
+        });
     }
+  };
+
+  const handleDelete = (user) => {
+    fetch(`https://summer-camp-server-pied-alpha.vercel.app/users/${user?.email}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch();
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: `${user.email} has been deleted`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   if (users.length === 0) {
@@ -73,6 +92,7 @@ const Allusers = () => {
             <th className="border border-base-300">User</th>
             <th className="border border-base-300">Make Instructor</th>
             <th className="border border-base-300">Make Admin</th>
+            <th className="border border-base-300">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -85,7 +105,7 @@ const Allusers = () => {
                   onClick={() => handleInstructor(user)}
                   className="btn btn-ghost bg-violet-300"
                 >
-                  {user.role === "instructor" ? <FaUser />: "Make Instructor"}
+                  {user.role === "instructor" ? <FaUser /> : "Make Instructor"}
                 </button>
               </td>
               <td className="border border-base-300">
@@ -93,7 +113,15 @@ const Allusers = () => {
                   onClick={() => handleAdmin(user)}
                   className="btn btn-ghost bg-violet-300"
                 >
-                  {user.role === "admin" ?<FaUserSecret />: "Make Admin" }
+                  {user.role === "admin" ? <FaUserSecret /> : "Make Admin"}
+                </button>
+              </td>
+              <td className="border border-base-300">
+                <button
+                  onClick={() => handleDelete(user)}
+                  className="btn btn-ghost bg-violet-300"
+                >
+                  Delete{" "}
                 </button>
               </td>
             </tr>

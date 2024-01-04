@@ -24,6 +24,8 @@ import MyClass from "./Dashboard/Instructor/MyClass";
 import Payment from "./Dashboard/User/Payment/Payment";
 import MyClasses from "./Dashboard/User/MyClasses/MyClasses";
 import EnrolledClasses from "./Dashboard/User/EnrolledClasses/EnrolledClasses";
+import Profile from "./Account/Profile/Profile";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
     ],
   },

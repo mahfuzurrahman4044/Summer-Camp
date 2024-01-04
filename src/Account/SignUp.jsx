@@ -17,7 +17,7 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    // console.log(data.name);
+    console.log(data.phone);
 
     if (data.password !== data.confirmPassword) {
       setError("Password doesn't matched");
@@ -32,10 +32,15 @@ const SignUp = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        updateInfo(data.name, data.photoURL)
+        updateInfo(data.name, data.photoURL, data.phone)
           .then(() => {
-            // console.log("User Updated")
-            const user = { name: data.name, email: data.email };
+            console.log("User Updated");
+            const user = {
+              photo: data.photoURL,
+              name: data.name,
+              phoneNumber: data.phone,
+              email: data.email,
+            };
             console.log(data.name, data.email);
             fetch("https://summer-camp-server-pied-alpha.vercel.app/users", {
               method: "POST",
@@ -75,15 +80,39 @@ const SignUp = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
+                  <span className="label-text">Photo</span>
+                </label>
+                <input
+                  type="text"
+                  {...register("photoURL", { required: true })}
+                  placeholder="photo"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
                   <span className="label-text">Name</span>
                 </label>
                 <input
                   type="text"
                   {...register("name", { required: true })}
-                  placeholder="Name"
+                  placeholder="name"
                   className="input input-bordered"
                 />
               </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Phone</span>
+                </label>
+                <input
+                  type="text"
+                  {...register("phone", { required: true })}
+                  placeholder="phone"
+                  className="input input-bordered"
+                />
+              </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -91,18 +120,7 @@ const SignUp = () => {
                 <input
                   type="text"
                   {...register("email", { required: true })}
-                  placeholder="Email"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo</span>
-                </label>
-                <input
-                  type="text"
-                  {...register("photoURL", { required: true })}
-                  placeholder="Photo"
+                  placeholder="email"
                   className="input input-bordered"
                 />
               </div>
@@ -119,7 +137,7 @@ const SignUp = () => {
                     maxLength: 20,
                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                   })}
-                  placeholder="Password"
+                  placeholder="password"
                   className="input input-bordered"
                 />
                 {errors.password?.type === "required" && (
@@ -152,7 +170,7 @@ const SignUp = () => {
                     maxLength: 20,
                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                   })}
-                  placeholder="Confirm Password"
+                  placeholder="confirm password"
                   className="input input-bordered"
                 />
                 {errors.confirmPassword?.type === "required" && (
