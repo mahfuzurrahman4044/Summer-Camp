@@ -18,9 +18,9 @@ const ExtraSection = () => {
       data-aos="fade-up" data-aos-duration="2000"
     >
       <SectionTitle title={"Review"}></SectionTitle>
-      <div className="lg:py-5 lg:flex justify-around items-center extra-section">
+      <div className="lg:py-5 lg:flex justify-around items-start extra-section">
         <div
-          className="card w-96 bg-base-300 shadow-xl card"
+          className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >
@@ -40,7 +40,7 @@ const ExtraSection = () => {
         </div>
 
         <div
-          className="card w-96 bg-base-300 shadow-xl card"
+          className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >
@@ -49,18 +49,13 @@ const ExtraSection = () => {
           </figure>
           <div className="card-body items-center  text-justify">
             <h2>
-              While the Summer Camp service provided a decent experience
-              overall, there were a few areas that could be improved. The
-              organization could offer more structured and diverse activities to
-              cater to different interests. Additionally, clearer communication
-              regarding schedules and any changes would enhance the overall
-              customer experience.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas repudiandae illum ducimus deserunt perspiciatis quidem rem quos quam omnis, adipisci alias quod dolorum sit incidunt mollitia ut ipsa sequi. Possimus dignissimos quam libero, autem vero nemo modi perspiciatis repellat quas ut nobis minus assumenda voluptates corporis ullam corrupti facere ex fugiat pariatur tenetur!
             </h2>
           </div>
         </div>
 
         <div
-          className="card w-96 bg-base-300 shadow-xl card"
+          className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >

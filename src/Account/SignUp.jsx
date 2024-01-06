@@ -76,7 +76,7 @@ const SignUp = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Sign Up!</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-300">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-violet-600 to-fuchsia-400">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -195,7 +195,7 @@ const SignUp = () => {
                 <p className="text-red-600">{error}</p>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary">
+                <button className=" btn btn-primary p-2 rounded-md">
                   Sign Up
                 </button>
               </div>

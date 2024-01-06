@@ -113,7 +113,7 @@ const Checkout = ({ classes, price }) => {
           }}
         />
         <button
-          className="btn btn-primary lg:my-2"
+          className=" bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md lg:my-2"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >

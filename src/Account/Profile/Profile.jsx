@@ -109,7 +109,7 @@ const Profile = () => {
                 onChange={handleImageChange}
               />
               <button
-                className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary mt-2"
+                className="p-2 rounded-md mt-2 btn btn-primary"
                 onClick={handleImageSubmit}
               >
                 Update Image
@@ -141,7 +141,7 @@ const Profile = () => {
           </div>
           <div className=" flex justify-center">
             <button
-              className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary mt-2 w-48"
+              className="btn btn-primary p-2 rounded-md mt-2 w-48"
               onClick={handleNameSubmit}
             >
               Update Name
@@ -158,7 +158,7 @@ const Profile = () => {
           </p>
           <button
             onClick={() => handleShowNameInput()}
-            className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary mt-2"
+            className="btn btn-primary p-2 rounded-md mt-2"
           >
             Change Name{" "}
           </button>
@@ -170,7 +170,7 @@ const Profile = () => {
       <div>
         <button
           onClick={() => deleteAccount()}
-          className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary mt-2"
+          className="btn btn-primary p-2 rounded-md mt-2"
         >
           Delete Account{" "}
         </button>

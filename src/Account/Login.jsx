@@ -9,6 +9,7 @@ const Login = () => {
   const [error, setError] = useState();
   const { signIn, resetPass, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
+  console.log(location);
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
@@ -21,7 +22,7 @@ const Login = () => {
 
     signIn(email, password)
       .then((res) => {
-        // console.log(res.user)
+        console.log(res.user)
         form.reset();
         navigate(from, { replace: true });
         setError("");
@@ -86,7 +87,7 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-300">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-violet-600 to-fuchsia-400">
             <form className="card-body" onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
@@ -111,10 +112,10 @@ const Login = () => {
                   className="input input-bordered"
                 />
                 <label className="label">
-                  <div>
+                  <div className="lg:text-left text-center">
                     Forgotten Password?{" "}
                     <div
-                      className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary lg:ml-12 mt-4"
+                      className=" btn btn-primary p-2 rounded-md lg:ml-16 ml-4 mt-4"
                       onClick={btnReset}
                     >
                       Reset Now
@@ -122,9 +123,9 @@ const Login = () => {
                   </div>
                 </label>
                 <label className="label">
-                  <Link to="/signup">
-                    New to Summer Camp? Please{" "}
-                    <div className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary ml-1 mt-4">
+                  <Link to="/signup" className="lg:text-left text-center">
+                    New to Summer Camp?
+                    <div className=" btn btn-primary p-2 rounded-md lg:ml-16 ml-5 mt-4">
                       Sign Up
                     </div>{" "}
                   </Link>
@@ -132,13 +133,13 @@ const Login = () => {
               </div>
               <p className="text-red-600">{error}</p>
               <div className="form-control mt-6">
-                <button className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary">
+                <button className=" btn btn-primary p-2 rounded-md">
                   Login
                 </button>
               </div>
               <div className="divider">OR</div>
               <div
-                className="btn btn-outline bg-slate-100 border-0 border-b-4 border-primary"
+                className=" btn btn-primary p-2 rounded-md"
                 onClick={handleGoogleLogin}
               >
                 <FaGoogle />

@@ -57,7 +57,7 @@ const ManageClasses = () => {
       <div className="grid lg:grid-cols-2 lg:gap-4 my-10">
         {classes.map((singleClass) => (
           <div key={singleClass._id}>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+            <div className="card card-compact w-96 bg-gradient-to-r from-violet-600 to-fuchsia-400 shadow-xl">
               <figure>
                 <img src={singleClass.img} alt="Shoes" />
               </figure>
@@ -74,7 +74,7 @@ const ManageClasses = () => {
                   <button
                     className={`${
                       !singleClass.status
-                        ? "btn btn-outline border border-0 border-b-4 border-primary m-1"
+                        ? "btn btn-primary m-1"
                         : "btn-disabled btn m-1"
                     }`}
                     onClick={() => handleApprovedStatus(singleClass._id)}
@@ -84,7 +84,7 @@ const ManageClasses = () => {
                   <button
                     className={`${
                       !singleClass.status
-                        ? "btn btn-outline border border-0 border-b-4 border-primary m-1"
+                        ? "btn btn-primary m-1"
                         : "btn-disabled btn m-1"
                     }`}
                     onClick={() => handleDenyStatus(singleClass._id)}
@@ -92,7 +92,7 @@ const ManageClasses = () => {
                     Deny
                   </button>
 
-                  <button className="btn btn-outline border border-0 border-b-4 border-primary m-1">
+                  <button className="btn btn-primary m-1">
                     Feedback
                   </button>
                 </div>

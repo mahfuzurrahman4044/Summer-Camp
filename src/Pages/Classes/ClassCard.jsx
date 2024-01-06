@@ -16,20 +16,19 @@ const ClassCard = ({ singleClass }) => {
   const { user } = useContext(AuthContext);
   // console.log(user);
 
-  const isAdmin = user?.role=="admin"
+  const isAdmin = user?.role == "admin";
   // console.log(instructorName);
-  const isInstructer = user?.role=="instructor"
+  const isInstructer = user?.role == "instructor";
   // console.log(isInstructer);
 
   const isUserLoggedIn = !!user;
-  const isButtonDisabled =
-    availableClasses === 0 || (isUserLoggedIn && (isAdmin || isInstructer));
+  const isButtonDisabled = isUserLoggedIn && (isAdmin || isInstructer);
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleClass = (items) => {
-    if (user !== null && user.email) {
+    if (user && user.email) {
       const { img, classTitle, instructorName, availableClasses, price } =
         items;
       const selectedClass = {
@@ -79,7 +78,7 @@ const ClassCard = ({ singleClass }) => {
 
   return (
     <div
-      className="card w-96 bg-base-300 shadow-xl mb-10"
+      className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl mb-10"
       data-aos="flip-left"
       data-aos-duration="2000"
     >
@@ -97,7 +96,7 @@ const ClassCard = ({ singleClass }) => {
             className={`${
               availableClasses === 0 || isButtonDisabled
                 ? "btn-disabled rounded-md p-2"
-                : "btn btn-outline bg-slate-100 border-0 border-b-4 border-primary"
+                : "btn btn-primary p-2 rounded-md"
             }`}
           >
             Select Class

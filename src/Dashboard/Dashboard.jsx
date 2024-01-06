@@ -24,7 +24,7 @@ const Dashboard = () => {
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
+            className=" bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md drawer-button lg:hidden"
           >
             Open drawer
           </label>

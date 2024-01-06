@@ -80,21 +80,21 @@ const NavBar = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="font-semibold">
+            <li className="border border-violet-600 rounded-md font-semibold mx-1">
               <Link to="/">Home</Link>
             </li>
-            <li className="font-semibold">
+            <li className="border border-violet-600 rounded-md font-semibold mx-1">
               <Link to="/classes">Classes</Link>
             </li>
-            <li className="font-semibold">
+            <li className="border border-violet-600 rounded-md font-semibold mx-1">
               <Link to="/instructors">Instructors</Link>
             </li>
             {user ? (
               <>
-                <li className="font-semibold">
+                <li className="border border-violet-600 rounded-md font-semibold mx-1">
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
-                <li className="font-semibold">
+                <li className="border border-violet-600 rounded-md font-semibold mx-1">
                   <Link to="/profile">
                     {/* <div className="userImg">
                         <img src={user.photoURL} alt="" />
@@ -102,16 +102,16 @@ const NavBar = () => {
                     <div>Profile</div>
                   </Link>
                 </li>
-                <li className="font-semibold">
+                <li className="border border-violet-600 rounded-md font-semibold mx-1">
                   <button onClick={handleLogOut}>Log Out</button>
                 </li>
               </>
             ) : (
               <ul className="flex">
-                <li className="font-semibold">
+                <li className="border border-violet-600 rounded-md font-semibold mx-1">
                   <Link to="/login">Log In</Link>
                 </li>
-                <li className="font-semibold">
+                <li className="border border-violet-600 rounded-md font-semibold mx-1">
                   <Link to="/signup">Sign Up</Link>
                 </li>
               </ul>
