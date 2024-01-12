@@ -78,7 +78,7 @@ const ClassCard = ({ singleClass }) => {
 
   return (
     <div
-      className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl mb-10"
+      className="card w-96  bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl mb-10"
       data-aos="flip-left"
       data-aos-duration="2000"
     >

@@ -14,13 +14,13 @@ const ExtraSection = () => {
   }, []);
   return (
     <div
-      className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-5"
+      className="bg-gradient-to-r from-blue-500 to-cyan-500 py-5"
       data-aos="fade-up" data-aos-duration="2000"
     >
       <SectionTitle title={"Review"}></SectionTitle>
-      <div className="lg:py-5 lg:flex justify-around items-start extra-section">
+      <div className="lg:py-5 lg:ms-0 ms-16 lg:flex justify-around items-start extra-section">
         <div
-          className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl card"
+          className="card w-96 bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >
@@ -40,7 +40,7 @@ const ExtraSection = () => {
         </div>
 
         <div
-          className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl card"
+          className="card w-96  bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >
@@ -55,7 +55,7 @@ const ExtraSection = () => {
         </div>
 
         <div
-          className="card w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl card"
+          className="card w-96  bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >

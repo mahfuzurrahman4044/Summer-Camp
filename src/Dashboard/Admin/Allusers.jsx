@@ -103,7 +103,7 @@ const Allusers = () => {
               <td className="border border-base-300">
                 <button
                   onClick={() => handleInstructor(user)}
-                  className="btn btn-ghost bg-violet-300"
+                  className="btn btn-primary"
                 >
                   {user.role === "instructor" ? <FaUser /> : "Make Instructor"}
                 </button>
@@ -111,7 +111,7 @@ const Allusers = () => {
               <td className="border border-base-300">
                 <button
                   onClick={() => handleAdmin(user)}
-                  className="btn btn-ghost bg-violet-300"
+                  className="btn btn-primary"
                 >
                   {user.role === "admin" ? <FaUserSecret /> : "Make Admin"}
                 </button>
@@ -119,7 +119,7 @@ const Allusers = () => {
               <td className="border border-base-300">
                 <button
                   onClick={() => handleDelete(user)}
-                  className="btn btn-ghost bg-violet-300"
+                  className="btn bg-red-600"
                 >
                   Delete{" "}
                 </button>

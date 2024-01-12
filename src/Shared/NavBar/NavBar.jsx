@@ -12,7 +12,7 @@ const NavBar = () => {
   };
   return (
     <div className="opacity-90">
-      <div className="navbar lg:px-16 lg:py-7 bg-gradient-to-r from-violet-500 to-fuchsia-500">
+      <div className="navbar lg:px-16 lg:py-7 bg-gradient-to-r from-blue-500 to-cyan-500">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +33,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content lg:mt-3 lg:p-2 shadow bg-gradient-to-r from-violet-500 to-fuchsia-500 opacity-90 rounded-box w-52"
+              className="menu menu-sm dropdown-content lg:mt-3 lg:p-2 shadow bg-gradient-to-r from-blue-500 to-cyan-500 opacity-90 rounded-box w-52"
             >
               <li>
                 <Link to="/">Home</Link>
@@ -80,38 +80,35 @@ const NavBar = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="border border-violet-600 rounded-md font-semibold mx-1">
+            <li className="rounded-md font-semibold mx-1">
               <Link to="/">Home</Link>
             </li>
-            <li className="border border-violet-600 rounded-md font-semibold mx-1">
+            <li className="rounded-md font-semibold mx-1">
               <Link to="/classes">Classes</Link>
             </li>
-            <li className="border border-violet-600 rounded-md font-semibold mx-1">
+            <li className="rounded-md font-semibold mx-1">
               <Link to="/instructors">Instructors</Link>
             </li>
             {user ? (
               <>
-                <li className="border border-violet-600 rounded-md font-semibold mx-1">
+                <li className="rounded-md font-semibold mx-1">
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
-                <li className="border border-violet-600 rounded-md font-semibold mx-1">
+                <li className="rounded-md font-semibold mx-1">
                   <Link to="/profile">
-                    {/* <div className="userImg">
-                        <img src={user.photoURL} alt="" />
-                      </div> */}
                     <div>Profile</div>
                   </Link>
                 </li>
-                <li className="border border-violet-600 rounded-md font-semibold mx-1">
+                <li className="rounded-md font-semibold mx-1">
                   <button onClick={handleLogOut}>Log Out</button>
                 </li>
               </>
             ) : (
               <ul className="flex">
-                <li className="border border-violet-600 rounded-md font-semibold mx-1">
+                <li className="rounded-md font-semibold mx-1">
                   <Link to="/login">Log In</Link>
                 </li>
-                <li className="border border-violet-600 rounded-md font-semibold mx-1">
+                <li className="rounded-md font-semibold mx-1">
                   <Link to="/signup">Sign Up</Link>
                 </li>
               </ul>

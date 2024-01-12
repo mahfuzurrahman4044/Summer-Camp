@@ -113,7 +113,7 @@ const Checkout = ({ classes, price }) => {
           }}
         />
         <button
-          className=" bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md lg:my-2"
+          className="btn btn-primary rounded-md lg:my-2"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
@@ -121,7 +121,7 @@ const Checkout = ({ classes, price }) => {
         </button>
         {cardError ? <p className="text-red-600">{cardError}</p> : ""}
         {transactionId ? (
-          <p className="text-green-600 bg-pink-600 p-4 rounded-md">
+          <p className="text-primary lg:text-2xl lg:font-semibold bg-gradient-to-r from-blue-600 to-cyan-400 p-4 rounded-md">
             Payment has been completed. You transactionId is {transactionId}
           </p>
         ) : (

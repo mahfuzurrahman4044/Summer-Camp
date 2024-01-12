@@ -17,14 +17,14 @@ const Dashboard = () => {
   console.log(isInstructor);
 
   return (
-    <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div className="bg-gradient-to-r from-blue-500 to-cyan-500">
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
-            className=" bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md drawer-button lg:hidden"
+            className=" bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md drawer-button lg:hidden"
           >
             Open drawer
           </label>
@@ -32,7 +32,7 @@ const Dashboard = () => {
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           {isAdmin && !isInstructor ? (
-            <ul className="menu p-4 w-80 h-full text-base-content bg-gradient-to-r from-violet-500 to-fuchsia-500">
+            <ul className="menu p-4 w-80 h-full text-base-content bg-gradient-to-r from-blue-500 to-cyan-500">
               {/* Sidebar content for admin */}
               <li>
                 <Link to="/dashboard/manageClasses">
@@ -63,7 +63,7 @@ const Dashboard = () => {
               </li>
             </ul>
           ) : isInstructor && !isAdmin ? (
-            <ul className="menu p-4 w-80 h-full text-base-content bg-gradient-to-r from-violet-500 to-fuchsia-500">
+            <ul className="menu p-4 w-80 h-full text-base-content bg-gradient-to-r from-blue-500 to-cyan-500">
               {/* Sidebar content for instructor */}
               <li>
                 <Link to="/dashboard/addClass">
@@ -94,7 +94,7 @@ const Dashboard = () => {
               </li>
             </ul>
           ) : (
-            <ul className="menu p-4 w-80 h-full text-base-content bg-gradient-to-r from-violet-500 to-fuchsia-500">
+            <ul className="menu p-4 w-80 h-full text-base-content bg-gradient-to-r from-blue-500 to-cyan-500">
               {/* Sidebar content for regular user */}
               <li>
                 <Link to="/dashboard/myClasses">

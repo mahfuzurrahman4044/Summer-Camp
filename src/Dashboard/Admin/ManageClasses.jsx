@@ -57,7 +57,7 @@ const ManageClasses = () => {
       <div className="grid lg:grid-cols-2 lg:gap-4 my-10">
         {classes.map((singleClass) => (
           <div key={singleClass._id}>
-            <div className="card card-compact w-96 bg-gradient-to-r from-violet-600 to-fuchsia-400 shadow-xl">
+            <div className="card card-compact w-96 bg-gradient-to-r from-blue-600 to-cyan-400 shadow-xl">
               <figure>
                 <img src={singleClass.img} alt="Shoes" />
               </figure>

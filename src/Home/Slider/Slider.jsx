@@ -16,23 +16,25 @@ const Slider = () => {
     Aos.init();
   }, []);
   return (
-    <Carousel className="lg:px-56 lg:py-5 slideRes bg-gradient-to-r from-violet-500 to-fuchsia-500">
-      <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
-        <img className="rounded-md" src={img1} />
-      </div>
-      <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
-        <img className="rounded-md" src={img2} />
-      </div>
-      <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
-        <img className="rounded-md" src={img3} />
-      </div>
-      <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
-        <img className="rounded-md" src={img4} />
-      </div>
-      <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
-        <img className="rounded-md" src={img5} />
-      </div>
-    </Carousel>
+    <div className="slider-container">
+      <Carousel className="lg:px-96 px-6 lg:py-5 slideRes bg-gradient-to-r from-blue-500 to-cyan-500">
+        <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
+          <img className="rounded-lg" src={img1} />
+        </div>
+        <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
+          <img className="rounded-lg" src={img2} />
+        </div>
+        <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
+          <img className="rounded-lg" src={img3} />
+        </div>
+        <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
+          <img className="rounded-lg" src={img4} />
+        </div>
+        <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
+          <img className="rounded-lg" src={img5} />
+        </div>
+      </Carousel>
+    </div>
   );
 };
 

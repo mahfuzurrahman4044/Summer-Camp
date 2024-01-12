@@ -71,12 +71,12 @@ const SignUp = () => {
 
   return (
     <div className="text-center">
-      <div className="hero min-h-screen bg-gradient-to-r from-violet-500 to-fuchsia-500">
+      <div className="hero min-h-screen bg-gradient-to-r from-blue-500 to-cyan-500">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Sign Up!</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-violet-600 to-fuchsia-400">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-blue-600 to-cyan-400">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">

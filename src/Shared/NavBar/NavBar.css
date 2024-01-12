@@ -14,10 +14,10 @@
   bottom: 15px;
 }
 
-.active {
+/* .active {
   background-color: beige;
   padding: 20px;
-}
+} */
 
 @media only screen and (max-width: 480px) {
   .logo img {

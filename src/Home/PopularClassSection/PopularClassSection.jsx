@@ -31,7 +31,7 @@ const PopularClassSection = () => {
 
   return (
     <div
-      className="bg-gradient-to-r from-violet-500 to-fuchsia-500"
+      className="bg-gradient-to-r from-blue-500 to-cyan-500"
       data-aos="fade-up"
       data-aos-duration="2000"
     >
@@ -44,7 +44,7 @@ const PopularClassSection = () => {
             className="lg:mb-5"
             key={result._id}
           >
-            <div className="card lg:w-96  bg-gradient-to-r from-violet-600 to-fuchsia-400 p-2 rounded-md shadow-xl mb-4 cardRes">
+            <div className="card lg:w-96  bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl mb-4 cardRes">
               <figure className="px-10 pt-10 class">
                 <img src={result.img} alt="Shoes" className="rounded-xl" />
               </figure>

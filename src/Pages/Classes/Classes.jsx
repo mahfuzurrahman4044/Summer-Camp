@@ -122,14 +122,14 @@ const Classes = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div className="bg-gradient-to-r from-blue-500 to-cyan-500">
       <div>
         {/* Search Method --------------------------------------------------------------------------------- */}
         <div className="hero py-5">
           <div className="hero-content">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-lg">
               <form
-                className="card-body bg-gradient-to-r from-violet-600 to-fuchsia-400 rounded-lg"
+                className="card-body bg-gradient-to-r from-blue-600 to-cyan-400 rounded-lg"
                 onSubmit={handleSearch}
               >
                 <div className="form-control">
@@ -171,7 +171,7 @@ const Classes = () => {
             {filteredClasses.map((filteredClass) => (
               <div
                 key={filteredClass._id}
-                className="card lg:w-96 mb-10 bg-gradient-to-r from-violet-600 to-fuchsia-400 shadow-lg"
+                className="card lg:w-96 mb-10 bg-gradient-to-r from-blue-600 to-cyan-400 shadow-lg"
                 data-aos="flip-left"
                 data-aos-duration="2000"
               >

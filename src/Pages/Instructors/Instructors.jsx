@@ -12,7 +12,7 @@ const Instructors = () => {
   }, []);
 
   return (
-    <div className="lg:pt-5 lg:px-20 lg:pb-0 pb-4 bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div className="lg:pt-5 lg:px-20 lg:pb-0 pb-4 bg-gradient-to-r from-blue-500 to-cyan-500">
       <table className="w-full border-collapse border border-base-300">
         <thead>
           <tr className="bg-base-300">
@@ -26,7 +26,7 @@ const Instructors = () => {
             <tr key={instructor._id} className="border border-base-300">
               <td className="p-4 text-center">
                 <div className="avatar">
-                  <div className="mask mask-squircle w-32 h-32 border border-base-300 text-center">
+                  <div className="mask mask-squircle lg:w-32 lg:h-32 border border-base-300 text-center">
                     <img className="flex justify-center" src={instructor.img} alt="" />
                   </div>
                 </div>

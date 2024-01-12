@@ -64,7 +64,7 @@ const AddClass = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Add Class</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-violet-600 to-fuchsia-400">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-blue-600 to-cyan-400">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">

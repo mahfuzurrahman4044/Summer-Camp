@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div>
       <footer
-        className="footer lg:p-10 py-5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-base-content"
+        className="footer lg:p-10 py-5 bg-gradient-to-r from-blue-500 to-cyan-500 text-base-content"
         //   data-aos="fade-up"
         //   data-aos-duration="2000"
       >

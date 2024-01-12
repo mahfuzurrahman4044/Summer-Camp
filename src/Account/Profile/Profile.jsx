@@ -93,7 +93,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-center py-6">
+    <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-center py-6">
       <div className="flex justify-center">
         <div className="flex justify-center">
           {showImageInput ? (
