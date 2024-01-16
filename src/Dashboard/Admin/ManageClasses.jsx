@@ -13,10 +13,13 @@ const ManageClasses = () => {
   }, []);
 
   const handleApprovedStatus = (id) => {
-        // console.log(id);
-    fetch(`https://summer-camp-server-pied-alpha.vercel.app/classes/approved/${id}`, {
-      method: "PUT",
-    })
+    // console.log(id);
+    fetch(
+      `https://summer-camp-server-pied-alpha.vercel.app/classes/approved/${id}`,
+      {
+        method: "PUT",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         //         console.log(data);
@@ -34,9 +37,12 @@ const ManageClasses = () => {
 
   const handleDenyStatus = (id) => {
     console.log(id);
-    fetch(`https://summer-camp-server-pied-alpha.vercel.app/classes/deny/${id}`, {
-      method: "PUT",
-    })
+    fetch(
+      `https://summer-camp-server-pied-alpha.vercel.app/classes/deny/${id}`,
+      {
+        method: "PUT",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         //         console.log(data);
@@ -58,8 +64,8 @@ const ManageClasses = () => {
         {classes.map((singleClass) => (
           <div key={singleClass._id}>
             <div className="card card-compact w-96 bg-gradient-to-r from-blue-600 to-cyan-400 shadow-xl">
-              <figure>
-                <img src={singleClass.img} alt="Shoes" />
+              <figure className="">
+                <img src={singleClass.img} className="pt-10 lg:px-0 px-5" alt="Shoes" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{singleClass.classTitle}</h2>
@@ -70,7 +76,7 @@ const ManageClasses = () => {
                 <p>{`Avaiable seats: ${singleClass.availableClasses}`}</p>
                 <p>{`Price: $${singleClass.price}`}</p>
                 <p>{`Status: ${singleClass.status}`}</p>
-                <div>
+                <div className="flex justify-around items-center">
                   <button
                     className={`${
                       !singleClass.status
@@ -92,9 +98,9 @@ const ManageClasses = () => {
                     Deny
                   </button>
 
-                  <button className="btn btn-primary m-1">
+                  {/* <button className="btn btn-primary m-1">
                     Feedback
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

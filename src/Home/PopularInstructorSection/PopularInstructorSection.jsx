@@ -49,13 +49,11 @@ const PopularInstructorSection = () => {
           data-aos-duration="3000"
         >
           {results?.map((result) => (
-            <SwiperSlide
-              key={result._id}
-            >
-              <img className="rounded-md" src={result.img} alt="" />
-              <h3 className="uppercase lg:text-2xl font-semibold">
+            <SwiperSlide key={result._id}>
+              <h3 className="first-letter:uppercase lg:py-2 lg:text-2xl font-semibold">
                 {result.name}
               </h3>
+              <img className="rounded-md" src={result.img} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>

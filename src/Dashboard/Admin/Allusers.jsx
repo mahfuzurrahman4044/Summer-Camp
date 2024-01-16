@@ -84,7 +84,7 @@ const Allusers = () => {
   }
 
   return (
-    <div>
+    <div className="bg-gradient-to-r from-blue-500 to-cyan-500">
       <table className="table w-full border-collapse">
         <thead>
           <tr>

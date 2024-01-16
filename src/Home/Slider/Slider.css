@@ -1,12 +1,16 @@
 .slider-img img {
-    height: 470px;
+  height: 470px;
+}
+
+.slider-container {
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 480px) {
-    .slider-img img {
-        height: 180px;
-    }
-    .slideRes{
-        padding-top: 30px;
-    }
+  .slider-img img {
+    height: 180px;
+  }
+  .slideRes {
+    padding-top: 30px;
+  }
 }

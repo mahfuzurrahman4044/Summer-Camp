@@ -1,14 +1,17 @@
 .class img {
-    height: 300px;
-    width: 250px;
+  height: 300px;
+  width: 250px;
+}
+
+.popularClass {
+  margin-top: 0;
 }
 
 @media only screen and (max-width: 480px) {
-    .class img {
-        height: 100px;
-        width: 100px;
-    }
-    .cardRes{
-        margin-right: 28px;
-    }
+  .class img {
+    height: 100px;
+  }
+  .cardRes {
+    /* margin-right: 28px; */
+  }
 }

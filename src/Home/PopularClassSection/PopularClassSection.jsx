@@ -31,7 +31,7 @@ const PopularClassSection = () => {
 
   return (
     <div
-      className="bg-gradient-to-r from-blue-500 to-cyan-500"
+      className="bg-gradient-to-r from-blue-500 to-cyan-500 popularClass"
       data-aos="fade-up"
       data-aos-duration="2000"
     >

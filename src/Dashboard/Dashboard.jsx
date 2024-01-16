@@ -17,14 +17,14 @@ const Dashboard = () => {
   console.log(isInstructor);
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-cyan-500">
-      <div className="drawer lg:drawer-open">
+    <div className="bg-gradient-to-r from-blue-500 to-cyan-500 overflow-auto">
+      <div className="drawer lg:drawer-open lg:p-0 p-5">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
-            className=" bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md drawer-button lg:hidden"
+            className=" bg-gradient-to-r from-blue-600 to-cyan-400 p-2 my-4 rounded-md drawer-button lg:hidden"
           >
             Open drawer
           </label>
