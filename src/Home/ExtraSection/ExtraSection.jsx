@@ -15,7 +15,8 @@ const ExtraSection = () => {
   return (
     <div
       className="bg-gradient-to-r from-blue-500 to-cyan-500 py-5"
-      data-aos="fade-up" data-aos-duration="2000"
+      data-aos="fade-up"
+      data-aos-duration="2000"
     >
       <SectionTitle title={"Review"}></SectionTitle>
       <div className="lg:py-5 lg:ms-0 ms-16 lg:flex justify-around items-start extra-section">
@@ -40,7 +41,7 @@ const ExtraSection = () => {
         </div>
 
         <div
-          className="card w-96  bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl card"
+          className="card w-96 bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >
@@ -49,13 +50,18 @@ const ExtraSection = () => {
           </figure>
           <div className="card-body items-center  text-justify">
             <h2>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas repudiandae illum ducimus deserunt perspiciatis quidem rem quos quam omnis, adipisci alias quod dolorum sit incidunt mollitia ut ipsa sequi. Possimus dignissimos quam libero, autem vero nemo modi perspiciatis repellat quas ut nobis minus assumenda voluptates corporis ullam corrupti facere ex fugiat pariatur tenetur!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+              quasi aspernatur officiis eius sit omnis, nam quae ex, id dolorum
+              praesentium commodi voluptatum tenetur assumenda voluptates facere
+              cum asperiores, rem illo? Nam tempora, suscipit magni perferendis
+              beatae soluta consequatur asperiores! Corrupti magni possimus ab
+              quibusdam provident.
             </h2>
           </div>
         </div>
 
         <div
-          className="card w-96  bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl card"
+          className="card w-96 bg-gradient-to-r from-blue-600 to-cyan-400 p-2 rounded-md shadow-xl card"
           data-aos="flip-left"
           data-aos-duration="2000"
         >

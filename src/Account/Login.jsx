@@ -115,7 +115,7 @@ const Login = () => {
                   <div className="lg:text-left text-center">
                     Forgotten Password?{" "}
                     <div
-                      className=" btn btn-primary p-2 rounded-md lg:ml-16 ml-4 mt-4"
+                      className=" btn btn-primary lg:p-2 rounded-md lg:ml-16 ml-4 mt-4"
                       onClick={btnReset}
                     >
                       Reset Now
@@ -125,14 +125,14 @@ const Login = () => {
                 <label className="label">
                   <Link to="/signup" className="lg:text-left text-center">
                     New to Summer Camp?
-                    <div className=" btn btn-primary p-2 rounded-md lg:ml-16 ml-5 mt-4">
+                    <div className=" btn btn-primary lg:p-2 rounded-md lg:ml-16 ml-5 mt-4">
                       Sign Up
                     </div>{" "}
                   </Link>
                 </label>
               </div>
               <p className="text-red-600">{error}</p>
-              <div className="form-control mt-6">
+              <div className="form-control lg:mt-6">
                 <button className=" btn btn-primary p-2 rounded-md">
                   Login
                 </button>

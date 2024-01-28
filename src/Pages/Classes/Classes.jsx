@@ -153,7 +153,7 @@ const Classes = () => {
       </div>
 
       {/* Sort by Price Option ----------------------------------------------------------------------------------- */}
-      <div className="flex justify-end pr-24 py-4">
+      <div className="flex justify-end pr-7 py-4">
         <select
           className="rounded-md p-2 border border-gray-300"
           onChange={(e) => handleSort(e.target.value)}
@@ -167,7 +167,7 @@ const Classes = () => {
       {/* Class Card ----------------------------------------------------------------------------------------*/}
       <div>
         {searchText && filteredClasses.length > 0 ? (
-          <div className="grid lg:grid-cols-3 lg:ps-20 ps-16 lg:py-5 ">
+          <div className="grid lg:grid-cols-3 lg:ps-7 ps-16 lg:py-5 ">
             {filteredClasses.map((filteredClass) => (
               <div
                 key={filteredClass._id}
@@ -205,7 +205,7 @@ const Classes = () => {
           </div>
         ) : (
           <div>
-            <div className="grid lg:grid-cols-3 lg:ps-20 ps-16 lg:py-5 ">
+            <div className="grid lg:grid-cols-3 lg:ps-7 ps-16 lg:py-5 ">
               {sortBy
                 ? sortedClasses.map((singleClass) => (
                     <ClassCard

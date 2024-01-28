@@ -12,8 +12,8 @@ const Payment = () => {
   const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
   return (
     <div>
-      <div className="text-center my-10">
-        <h3 className="lg:text-3xl uppercase border-y-4 py-4 font-semibold">
+      <div className="text-center my-10 lg:w-1/2 w-1/4 mx-auto">
+        <h3 className="lg:text-3xl border-y-4 lg:py-4 font-semibold">
           Payment
         </h3>
       </div>

@@ -10,9 +10,10 @@ const NavBar = () => {
     // console.log("Clicked");
     logOut();
   };
+
   return (
     <div className="opacity-90">
-      <div className="navbar lg:px-16 lg:py-7 bg-gradient-to-r from-blue-500 to-cyan-500">
+      <div className="navbar lg:px-10 lg:py-4 bg-gradient-to-r from-blue-500 to-cyan-500">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -79,36 +80,36 @@ const NavBar = () => {
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li className="rounded-md font-semibold mx-1">
+          <ul className="menu menu-horizontal">
+            <li className="rounded-md mx-">
               <Link to="/">Home</Link>
             </li>
-            <li className="rounded-md font-semibold mx-1">
+            <li className="rounded-md mx-">
               <Link to="/classes">Classes</Link>
             </li>
-            <li className="rounded-md font-semibold mx-1">
+            <li className="rounded-md mx-">
               <Link to="/instructors">Instructors</Link>
             </li>
             {user ? (
               <>
-                <li className="rounded-md font-semibold mx-1">
+                <li className="rounded-md mx-">
                   <Link to="/dashboard">Dashboard</Link>
                 </li>
-                <li className="rounded-md font-semibold mx-1">
+                <li className="rounded-md mx-">
                   <Link to="/profile">
                     <div>Profile</div>
                   </Link>
                 </li>
-                <li className="rounded-md font-semibold mx-1">
+                <li className="rounded-md mx-">
                   <button onClick={handleLogOut}>Log Out</button>
                 </li>
               </>
             ) : (
               <ul className="flex">
-                <li className="rounded-md font-semibold mx-1">
+                <li className="rounded-md mx-">
                   <Link to="/login">Log In</Link>
                 </li>
-                <li className="rounded-md font-semibold mx-1">
+                <li className="rounded-md mx-">
                   <Link to="/signup">Sign Up</Link>
                 </li>
               </ul>

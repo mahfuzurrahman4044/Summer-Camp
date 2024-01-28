@@ -12,7 +12,7 @@ const Instructors = () => {
   }, []);
 
   return (
-    <div className="lg:pt-5 lg:px-20 lg:pb-0 pb-4 bg-gradient-to-r from-blue-500 to-cyan-500">
+    <div className="pt-5 lg:px-20 lg:pb-0 pb-4 bg-gradient-to-r from-blue-500 to-cyan-500">
       <table className="w-full border-collapse border border-base-300">
         <thead>
           <tr className="bg-base-300">

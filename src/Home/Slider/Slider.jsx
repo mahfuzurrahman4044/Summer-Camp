@@ -17,7 +17,7 @@ const Slider = () => {
   }, []);
   return (
     <div className="slider-container">
-      <Carousel className="lg:px-96 px-6 lg:py-5 slideRes bg-gradient-to-r from-blue-500 to-cyan-500">
+      <Carousel className="lg:px-80 px-10 lg:py-5 slideRes bg-gradient-to-r from-blue-500 to-cyan-500">
         <div className="slider-img" data-aos="zoom-in" data-aos-duration="3000">
           <img className="rounded-lg" src={img1} />
         </div>
